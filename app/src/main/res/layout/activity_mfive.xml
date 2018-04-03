@@ -485,7 +485,6 @@
         android:layout_alignParentRight="true"
         android:layout_margin="16dp"
         android:hint="Reset Game"
-
         app:srcCompat="@drawable/ic_autorenew_black_24dp"
         />
 

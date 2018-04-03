@@ -170,6 +170,9 @@ public class MFiveActivity extends AppCompatActivity {
     }
 
     public void reset_game() {
+
+        //reset all dependent variables
+
         gamewon = false;
         TextView win = (TextView)findViewById(R.id.winner_status);
         win.setText("");

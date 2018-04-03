@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    //launch the activities
     public void play_3x3(View v) {
         Intent intent = new Intent(this, MThreeActivity.class);
         startActivity(intent);

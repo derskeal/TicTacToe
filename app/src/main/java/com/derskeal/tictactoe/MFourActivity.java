@@ -76,7 +76,6 @@ public class MFourActivity extends AppCompatActivity {
         }
 
         else {
-
             //check if the cell is filled
         /*
         * if filled, do nothing
