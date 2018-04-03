@@ -107,6 +107,7 @@ public class MFourActivity extends AppCompatActivity {
                 TextView pti = (TextView) findViewById(R.id.player_turn_id);
                 String pt = valtouse ? "X" : "O";
                 pti.setText(pt);
+                taptimes++;
             } else if (taptimes >= 16) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
             }
@@ -115,7 +116,7 @@ public class MFourActivity extends AppCompatActivity {
                 Toast.makeText(this, "Already played cell", Toast.LENGTH_SHORT).show();
             }
 
-            taptimes++;
+
 
             //Array e =
             //Object e = new Object();
