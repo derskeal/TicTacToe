@@ -29,4 +29,12 @@
         android:onClick="play_4x4"
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play 5x5"
+        android:layout_gravity="center"
+        android:onClick="play_5x5"
+        />
+
 </LinearLayout>

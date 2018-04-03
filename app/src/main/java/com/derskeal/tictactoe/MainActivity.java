@@ -23,4 +23,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void play_5x5(View v) {
+        Intent intent = new Intent(this, MFiveActivity.class);
+        startActivity(intent);
+    }
+
 }
