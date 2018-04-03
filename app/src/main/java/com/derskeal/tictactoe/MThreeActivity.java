@@ -63,9 +63,8 @@ public class MThreeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // TODO: 28/03/2018 add single player mode
+    // TODO: 28/03/2018 add single player mode/AI
     // TODO: 28/03/2018 add 4x4 and 5x5 boxes
-    // TODO: 28/03/2018 do the navigation drawer for all activities
 
     public void cell_clicked(View vv) {
         if (gamewon) {
