@@ -71,7 +71,7 @@ public class MFourActivity extends AppCompatActivity {
     public void cell_clicked(View vv) {
         if (gamewon) {
 
-        } else if (taptimes == 9 && !gamewon) {
+        } else if (taptimes == 16 && !gamewon) {
             Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
         }
 
@@ -90,7 +90,7 @@ public class MFourActivity extends AppCompatActivity {
 
             TextView v = (TextView) vv;
 
-            if (taptimes < 10 && TextUtils.isEmpty(v.getText().toString())) {
+            if (taptimes < 16 && TextUtils.isEmpty(v.getText().toString())) {
                 String playsym;
                 if (valtouse) {
                     playsym = "X";
@@ -107,7 +107,7 @@ public class MFourActivity extends AppCompatActivity {
                 TextView pti = (TextView) findViewById(R.id.player_turn_id);
                 String pt = valtouse ? "X" : "O";
                 pti.setText(pt);
-            } else if (taptimes >= 9) {
+            } else if (taptimes >= 16) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
             }
 
@@ -120,24 +120,27 @@ public class MFourActivity extends AppCompatActivity {
             //Array e =
             //Object e = new Object();
             int[][] wi = {
-                    {1, 2, 3},
-                    {4, 5, 6},
-                    {7, 8, 9},
-                    {1, 4, 7},
-                    {2, 5, 8},
-                    {3, 6, 9},
-                    {1, 5, 9},
-                    {3, 5, 7},
+                    {1, 2, 3, 4},
+                    {5, 6, 7, 8},
+                    {9, 10, 11, 12},
+                    {13, 14, 15, 16},
+                    {1, 5, 9, 13},
+                    {2, 6, 10, 14},
+                    {3, 7, 11, 15},
+                    {4, 8, 12, 16},
+                    {1, 6, 11, 16},
+                    {4, 7, 10, 13}
             };
 
 
             for (int[] i : wi) {
-                int a, b, c;
+                int a, b, c, d;
                 a = i[0];
                 b = i[1];
                 c = i[2];
+                d = i[3];
 
-                if (!TextUtils.isEmpty(asv[a]) && asv[a] == asv[b] && asv[a] == asv[c]) {
+                if (!TextUtils.isEmpty(asv[a]) && asv[a] == asv[b] && asv[a] == asv[c] && asv[a] == asv[d]) {
                     String winner = "Winner: " + asv[a];
                     Toast.makeText(this, "Game Over", Toast.LENGTH_SHORT).show();
                     gamewon = true;
@@ -154,7 +157,7 @@ public class MFourActivity extends AppCompatActivity {
 
             }
 
-            if (taptimes == 9 && !gamewon) {
+            if (taptimes == 16 && !gamewon) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
             }
 
