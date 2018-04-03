@@ -19,6 +19,9 @@ public class MThreeActivity extends AppCompatActivity {
     public int[] tapinfotags = new int[9];
     public String[] asv = new String[10]; //asv - all squares value
     public boolean gamewon = false;
+    public boolean gamedrawn = false;
+    public boolean ane = false;
+    public int anenum = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +72,11 @@ public class MThreeActivity extends AppCompatActivity {
     public void cell_clicked(View vv) {
         if (gamewon) {
 
-        } else {
+        } else if (taptimes == 9 && !gamewon) {
+            Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
+        }
+
+        else {
 
             //check if the cell is filled
         /*
@@ -101,7 +108,11 @@ public class MThreeActivity extends AppCompatActivity {
                 TextView pti = (TextView) findViewById(R.id.player_turn_id);
                 String pt = valtouse ? "X" : "O";
                 pti.setText(pt);
-            } else {
+            } else if (taptimes >= 9) {
+                Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
+            }
+
+            else {
                 Toast.makeText(this, "Already played cell", Toast.LENGTH_SHORT).show();
             }
 
@@ -131,6 +142,7 @@ public class MThreeActivity extends AppCompatActivity {
                     String winner = "Winner: " + asv[a];
                     Toast.makeText(this, "Game Over", Toast.LENGTH_SHORT).show();
                     gamewon = true;
+                    gamedrawn = false;
 
                     TextView win = (TextView)findViewById(R.id.winner_status);
                     win.setText(winner);
@@ -138,13 +150,24 @@ public class MThreeActivity extends AppCompatActivity {
                     break;
                 }
 
+                /*if (!TextUtils.isEmpty(asv[a]) && asv[a] != asv[b] && asv[a] != asv[c]) {
+
+                }*/
+
             }
+
+            if (taptimes == 9 && !gamewon) {
+                Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
+            }
+
 
         }
     }
 
     public void reset_game() {
         gamewon = false;
+        gamedrawn = false;
+        anenum = 0;
         TextView win = (TextView)findViewById(R.id.winner_status);
         win.setText("");
         taptimes = 0;
