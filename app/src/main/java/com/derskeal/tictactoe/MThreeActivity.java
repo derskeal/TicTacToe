@@ -19,9 +19,7 @@ public class MThreeActivity extends AppCompatActivity {
     public int[] tapinfotags = new int[9];
     public String[] asv = new String[10]; //asv - all squares value
     public boolean gamewon = false;
-    public boolean gamedrawn = false;
-    public boolean ane = false;
-    public int anenum = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,7 +140,6 @@ public class MThreeActivity extends AppCompatActivity {
                     String winner = "Winner: " + asv[a];
                     Toast.makeText(this, "Game Over", Toast.LENGTH_SHORT).show();
                     gamewon = true;
-                    gamedrawn = false;
 
                     TextView win = (TextView)findViewById(R.id.winner_status);
                     win.setText(winner);
@@ -166,8 +163,6 @@ public class MThreeActivity extends AppCompatActivity {
 
     public void reset_game() {
         gamewon = false;
-        gamedrawn = false;
-        anenum = 0;
         TextView win = (TextView)findViewById(R.id.winner_status);
         win.setText("");
         taptimes = 0;
