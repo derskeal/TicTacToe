@@ -3,9 +3,12 @@ package com.derskeal.tictactoe;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MFourActivity extends AppCompatActivity {
 
@@ -64,4 +67,162 @@ public class MFourActivity extends AppCompatActivity {
     }
 
     // TODO: 28/03/2018 add 4x4 box
+
+    public void cell_clicked(View vv) {
+        if (gamewon) {
+
+        } else if (taptimes == 9 && !gamewon) {
+            Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
+        }
+
+        else {
+
+            //check if the cell is filled
+        /*
+        * if filled, do nothing
+        * if empty, fill it with the appropriate player symbol and,
+        *
+        *
+        * check if there is a winner
+        *
+        *
+        * */
+
+            TextView v = (TextView) vv;
+
+            if (taptimes < 10 && TextUtils.isEmpty(v.getText().toString())) {
+                String playsym;
+                if (valtouse) {
+                    playsym = "X";
+                } else {
+                    playsym = "O";
+                }
+
+                int tag = Integer.parseInt(v.getTag().toString());
+                asv[tag] = playsym;
+
+                v.setText(playsym);
+                valtouse = !valtouse;
+
+                TextView pti = (TextView) findViewById(R.id.player_turn_id);
+                String pt = valtouse ? "X" : "O";
+                pti.setText(pt);
+            } else if (taptimes >= 9) {
+                Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
+            }
+
+            else {
+                Toast.makeText(this, "Already played cell", Toast.LENGTH_SHORT).show();
+            }
+
+            taptimes++;
+
+            //Array e =
+            //Object e = new Object();
+            int[][] wi = {
+                    {1, 2, 3},
+                    {4, 5, 6},
+                    {7, 8, 9},
+                    {1, 4, 7},
+                    {2, 5, 8},
+                    {3, 6, 9},
+                    {1, 5, 9},
+                    {3, 5, 7},
+            };
+
+
+            for (int[] i : wi) {
+                int a, b, c;
+                a = i[0];
+                b = i[1];
+                c = i[2];
+
+                if (!TextUtils.isEmpty(asv[a]) && asv[a] == asv[b] && asv[a] == asv[c]) {
+                    String winner = "Winner: " + asv[a];
+                    Toast.makeText(this, "Game Over", Toast.LENGTH_SHORT).show();
+                    gamewon = true;
+
+                    TextView win = (TextView)findViewById(R.id.winner_status);
+                    win.setText(winner);
+
+                    break;
+                }
+
+                /*if (!TextUtils.isEmpty(asv[a]) && asv[a] != asv[b] && asv[a] != asv[c]) {
+
+                }*/
+
+            }
+
+            if (taptimes == 9 && !gamewon) {
+                Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
+            }
+
+
+        }
+    }
+
+    public void reset_game() {
+        gamewon = false;
+        TextView win = (TextView)findViewById(R.id.winner_status);
+        win.setText("");
+        taptimes = 0;
+
+        valtouse = true;
+        TextView pti = (TextView) findViewById(R.id.player_turn_id);
+        String pt = valtouse ? "X" : "O";
+        pti.setText(pt);
+
+        asv = new String[17];
+
+        TextView tv = (TextView) findViewById(R.id.c1);
+        tv.setText("");
+
+        tv = (TextView) findViewById(R.id.c2);
+        tv.setText("");
+
+        tv = (TextView) findViewById(R.id.c3);
+        tv.setText("");
+
+        tv = (TextView) findViewById(R.id.c4);
+        tv.setText("");
+
+        tv = (TextView) findViewById(R.id.c5);
+        tv.setText("");
+
+        tv = (TextView) findViewById(R.id.c6);
+        tv.setText("");
+
+        tv = (TextView) findViewById(R.id.c7);
+        tv.setText("");
+
+        tv = (TextView) findViewById(R.id.c8);
+        tv.setText("");
+
+        tv = (TextView) findViewById(R.id.c9);
+        tv.setText("");
+
+        tv = (TextView) findViewById(R.id.c10);
+        tv.setText("");
+
+        tv = (TextView) findViewById(R.id.c11);
+        tv.setText("");
+
+        tv = (TextView) findViewById(R.id.c12);
+        tv.setText("");
+
+        tv = (TextView) findViewById(R.id.c13);
+        tv.setText("");
+
+        tv = (TextView) findViewById(R.id.c14);
+        tv.setText("");
+
+        tv = (TextView) findViewById(R.id.c15);
+        tv.setText("");
+
+        tv = (TextView) findViewById(R.id.c16);
+        tv.setText("");
+
+
+    }
 }
