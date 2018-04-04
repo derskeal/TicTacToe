@@ -35,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/ll1"
         android:layout_centerHorizontal="true"
+        android:paddingTop="20dp"
         android:text=""
         android:id="@+id/winner_status"
         android:textSize="25sp"
