@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class SThreeActivity extends AppCompatActivity {
 
     public boolean valtouse = true;
@@ -21,6 +23,10 @@ public class SThreeActivity extends AppCompatActivity {
     public String[] asv = new String[10]; //asv - all squares value
     public boolean gamewon = false;
     public String playsym;
+    public String defplaysym;
+
+    public int r1;
+    public boolean player_played;
 
 
     @Override
@@ -39,6 +45,7 @@ public class SThreeActivity extends AppCompatActivity {
         });
 
         avatar_select();
+        //Toast.makeText(this, ""+ai_play(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -83,6 +90,7 @@ public class SThreeActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 //set the player symbol to X
                 playsym = "X";
+                defplaysym = "X";
                 valtouse = true;
                 TextView v = (TextView) findViewById(R.id.player_turn_id);
                 v.setText("X");
@@ -94,6 +102,7 @@ public class SThreeActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 //set the player symbol to O
                 playsym = "O";
+                defplaysym = "O";
                 valtouse = false;
                 TextView v = (TextView) findViewById(R.id.player_turn_id);
                 v.setText("O");
@@ -114,8 +123,20 @@ public class SThreeActivity extends AppCompatActivity {
 
     }
 
+    public void cell_clicked(View v) {
+        /*if (player_played) {
+            ai_play();
+        } else {
+            cell_clicked2(v);
+            ai_play();
+        }*/
+        Toast.makeText(this, "dsdfrtyu", Toast.LENGTH_SHORT).show();
+        cell_clicked2(v);
+        ai_play();
+    }
 
-    public void cell_clicked(View vv) {
+
+    public void cell_clicked2(View vv) {
         if (gamewon) {
 
         } else if (taptimes == 9 && !gamewon) {
@@ -206,6 +227,9 @@ public class SThreeActivity extends AppCompatActivity {
 
 
         }
+        player_played = true;
+
+
     }
 
     public void reset_game() {
@@ -214,9 +238,9 @@ public class SThreeActivity extends AppCompatActivity {
         win.setText("");
         taptimes = 0;
 
-        valtouse = true;
+        valtouse = defplaysym == "X";
         TextView pti = (TextView) findViewById(R.id.player_turn_id);
-        String pt = valtouse ? "X" : "O";
+        String pt = defplaysym;
         pti.setText(pt);
 
         asv = new String[10];
@@ -247,6 +271,45 @@ public class SThreeActivity extends AppCompatActivity {
 
         tv = (TextView) findViewById(R.id.c9);
         tv.setText("");
+
+
+    }
+
+
+    public void ai_play() {
+        int c1 = R.id.c1;
+        int c2 = R.id.c2;
+        int c3 = R.id.c3;
+        int c4 = R.id.c4;
+        int c5 = R.id.c5;
+        int c6 = R.id.c6;
+        int c7 = R.id.c7;
+        int c8 = R.id.c8;
+        int c9 = R.id.c9;
+
+        int[] cs = {0, c1, c2, c3, c4, c5, c6, c7, c8, c9};
+
+
+        Random rand = new Random();
+
+
+        boolean akpos = false;
+        while (!akpos) {
+            r1 = rand.nextInt(9);
+            if (r1 != 0 && TextUtils.isEmpty(asv[r1])) {
+                akpos = true;
+            }
+        }
+
+        try {
+            player_played = false;
+            TextView v = (TextView) findViewById(cs[r1]);
+            //v.performClick();
+            cell_clicked2(v);
+        } catch (Exception e) {
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
 
     }
 }
