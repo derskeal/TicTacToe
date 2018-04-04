@@ -1,6 +1,7 @@
 package com.derskeal.tictactoe;
 
 import android.content.DialogInterface;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class SThreeActivity extends AppCompatActivity {
 
@@ -27,6 +30,8 @@ public class SThreeActivity extends AppCompatActivity {
 
     public int r1;
     public boolean player_played;
+
+    //public ScheduledExecutorService
 
 
     @Override
@@ -132,7 +137,15 @@ public class SThreeActivity extends AppCompatActivity {
         }*/
         //Toast.makeText(this, "dsdfrtyu", Toast.LENGTH_SHORT).show();
         cell_clicked2(v);
+        //todo: schedule a task should be better than this
+        /*try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+        }*/
+
         ai_play();
+
     }
 
 
@@ -303,11 +316,13 @@ public class SThreeActivity extends AppCompatActivity {
 
         try {
             player_played = false;
+
             TextView v = (TextView) findViewById(cs[r1]);
             //v.performClick();
             cell_clicked2(v);
         } catch (Exception e) {
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(SThreeActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
 
 
