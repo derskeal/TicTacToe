@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
+import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
@@ -31,7 +32,6 @@ public class SThreeActivity extends AppCompatActivity {
     public int r1;
     public boolean player_played;
 
-    //public ScheduledExecutorService
 
 
     @Override
@@ -129,22 +129,28 @@ public class SThreeActivity extends AppCompatActivity {
     }
 
     public void cell_clicked(View v) {
-        /*if (player_played) {
-            ai_play();
-        } else {
-            cell_clicked2(v);
-            ai_play();
-        }*/
-        //Toast.makeText(this, "dsdfrtyu", Toast.LENGTH_SHORT).show();
+        /*final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+        executorService.schedule(App::myTask, 2, TimeUnit.SECONDS);*/
         cell_clicked2(v);
-        //todo: schedule a task should be better than this
-        /*try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (InterruptedException e) {
-            Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-        }*/
 
-        ai_play();
+        //todo: schedule a task should be better than this
+        //    TimeUnit.SECONDS.sleep(2);
+
+        TextView k = (TextView)findViewById(R.id.player_turn_id);
+        k.setText("Computer is playing");
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                ai_play();
+            }
+        }, 1000);
+
+        //k.setText("");
+
+        //ai_play();
 
     }
 
@@ -311,6 +317,11 @@ public class SThreeActivity extends AppCompatActivity {
             r1 = rand.nextInt(9);
             if (r1 != 0 && TextUtils.isEmpty(asv[r1])) {
                 akpos = true;
+            } else if(!TextUtils.isEmpty(asv[1]) && !TextUtils.isEmpty(asv[2]) && !TextUtils.isEmpty(asv[3]) && !TextUtils.isEmpty(asv[4]) && !TextUtils.isEmpty(asv[5]) && !TextUtils.isEmpty(asv[6]) && !TextUtils.isEmpty(asv[7]) && !TextUtils.isEmpty(asv[8]) && !TextUtils.isEmpty(asv[9])){
+                //todo we need to prevent the app from hanging if the condition is caught in a loop when there is no available cell
+                //todo done
+                //todo next is : scoreboard
+                break;
             }
         }
 
