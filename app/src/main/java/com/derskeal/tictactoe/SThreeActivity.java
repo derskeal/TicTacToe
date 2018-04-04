@@ -1,6 +1,8 @@
 package com.derskeal.tictactoe;
 
+import android.content.DialogInterface;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -18,6 +20,7 @@ public class SThreeActivity extends AppCompatActivity {
     public int[] tapinfotags = new int[9];
     public String[] asv = new String[10]; //asv - all squares value
     public boolean gamewon = false;
+    public String playsym;
 
 
     @Override
@@ -34,6 +37,8 @@ public class SThreeActivity extends AppCompatActivity {
                 reset_game();
             }
         });
+
+        avatar_select();
     }
 
     @Override
@@ -63,7 +68,52 @@ public class SThreeActivity extends AppCompatActivity {
     }
 
     // TODO: 28/03/2018 add single player mode/AI
-    // TODO: 28/03/2018 add 4x4 and 5x5 boxes
+
+    public void avatar_select() {
+        Toast.makeText(this, "chai", Toast.LENGTH_SHORT).show();
+        // 1. Instantiate an AlertDialog.Builder with its constructor
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+
+        builder.setMessage("Please select your Player Symbol")
+                .setTitle("Player");
+
+        builder.setPositiveButton("X", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //set the player symbol to X
+                playsym = "X";
+                valtouse = true;
+                TextView v = (TextView) findViewById(R.id.player_turn_id);
+                v.setText("X");
+            }
+        });
+
+        builder.setNegativeButton("O", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //set the player symbol to O
+                playsym = "O";
+                valtouse = false;
+                TextView v = (TextView) findViewById(R.id.player_turn_id);
+                v.setText("O");
+            }
+        });
+
+        builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(SThreeActivity.this, "Player Cancelled", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
+
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+    }
+
 
     public void cell_clicked(View vv) {
         if (gamewon) {
@@ -88,7 +138,6 @@ public class SThreeActivity extends AppCompatActivity {
             TextView v = (TextView) vv;
 
             if (taptimes < 10 && TextUtils.isEmpty(v.getText().toString())) {
-                String playsym;
                 if (valtouse) {
                     playsym = "X";
                 } else {

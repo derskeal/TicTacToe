@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/player_turn_id"
-            android:text="Player/Computer"
+            android:text=""
             android:textColor="#0000aa"
             android:textSize="20sp"
             />

@@ -30,18 +30,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void splay_3x3(View v) {
-        Intent intent = new Intent(this, MThreeActivity.class);
+        Intent intent = new Intent(this, SThreeActivity.class);
         startActivity(intent);
     }
 
     public void splay_4x4(View v) {
-        Intent intent = new Intent(this, MFourActivity.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(this, SFourActivity.class);
+        startActivity(intent);*/
     }
 
     public void splay_5x5(View v) {
-        Intent intent = new Intent(this, MFiveActivity.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(this, SFiveActivity.class);
+        startActivity(intent);*/
     }
 
 }
