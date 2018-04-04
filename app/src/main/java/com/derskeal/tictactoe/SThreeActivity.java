@@ -77,7 +77,7 @@ public class SThreeActivity extends AppCompatActivity {
     // TODO: 28/03/2018 add single player mode/AI
 
     public void avatar_select() {
-        Toast.makeText(this, "chai", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "chai", Toast.LENGTH_SHORT).show();
         // 1. Instantiate an AlertDialog.Builder with its constructor
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
@@ -130,7 +130,7 @@ public class SThreeActivity extends AppCompatActivity {
             cell_clicked2(v);
             ai_play();
         }*/
-        Toast.makeText(this, "dsdfrtyu", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "dsdfrtyu", Toast.LENGTH_SHORT).show();
         cell_clicked2(v);
         ai_play();
     }
