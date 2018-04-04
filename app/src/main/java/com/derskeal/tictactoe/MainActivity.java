@@ -14,17 +14,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //launch the activities
-    public void play_3x3(View v) {
+    public void mplay_3x3(View v) {
         Intent intent = new Intent(this, MThreeActivity.class);
         startActivity(intent);
     }
 
-    public void play_4x4(View v) {
+    public void mplay_4x4(View v) {
         Intent intent = new Intent(this, MFourActivity.class);
         startActivity(intent);
     }
 
-    public void play_5x5(View v) {
+    public void mplay_5x5(View v) {
+        Intent intent = new Intent(this, MFiveActivity.class);
+        startActivity(intent);
+    }
+
+    public void splay_3x3(View v) {
+        Intent intent = new Intent(this, MThreeActivity.class);
+        startActivity(intent);
+    }
+
+    public void splay_4x4(View v) {
+        Intent intent = new Intent(this, MFourActivity.class);
+        startActivity(intent);
+    }
+
+    public void splay_5x5(View v) {
         Intent intent = new Intent(this, MFiveActivity.class);
         startActivity(intent);
     }

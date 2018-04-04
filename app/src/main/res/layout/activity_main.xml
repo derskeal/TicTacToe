@@ -10,7 +10,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Multiplayer"
+        android:textSize="25sp"
 
         />
 
@@ -19,14 +20,14 @@
         android:layout_height="wrap_content"
         android:text="Play 3x3"
         android:layout_gravity="center"
-        android:onClick="play_3x3"
+        android:onClick="mplay_3x3"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Play 4x4"
         android:layout_gravity="center"
-        android:onClick="play_4x4"
+        android:onClick="mplay_4x4"
         />
 
     <Button
@@ -34,7 +35,7 @@
         android:layout_height="wrap_content"
         android:text="Play 5x5"
         android:layout_gravity="center"
-        android:onClick="play_5x5"
+        android:onClick="mplay_5x5"
         />
 
     <Button
@@ -42,6 +43,34 @@
         android:layout_height="wrap_content"
         android:text="About Game"
         android:layout_gravity="center"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Single Player"
+        android:textSize="25sp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play 3x3"
+        android:layout_gravity="center"
+        android:onClick="splay_3x3"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play 4x4"
+        android:layout_gravity="center"
+        android:onClick="splay_4x4"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play 5x5"
+        android:layout_gravity="center"
+        android:onClick="splay_5x5"
         />
 
 
