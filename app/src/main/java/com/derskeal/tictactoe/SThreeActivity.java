@@ -315,9 +315,6 @@ public class SThreeActivity extends AppCompatActivity {
             if (r1 != 0 && TextUtils.isEmpty(asv[r1])) {
                 akpos = true;
             } else if(!TextUtils.isEmpty(asv[1]) && !TextUtils.isEmpty(asv[2]) && !TextUtils.isEmpty(asv[3]) && !TextUtils.isEmpty(asv[4]) && !TextUtils.isEmpty(asv[5]) && !TextUtils.isEmpty(asv[6]) && !TextUtils.isEmpty(asv[7]) && !TextUtils.isEmpty(asv[8]) && !TextUtils.isEmpty(asv[9])){
-                //todo we need to prevent the app from hanging if the condition is caught in a loop when there is no available cell
-                //todo done
-                //todo next is : scoreboard
                 break;
             }
         }
