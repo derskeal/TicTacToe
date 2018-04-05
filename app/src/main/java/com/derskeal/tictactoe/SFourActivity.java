@@ -24,6 +24,7 @@ public class SFourActivity extends AppCompatActivity {
     public boolean gamewon = false;
 
     public String playsym;
+    public String player;
     public String defplaysym;
 
     public int r1;
@@ -95,6 +96,7 @@ public class SFourActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //set the player symbol to X
+                player = "X";
                 playsym = "X";
                 defplaysym = "X";
                 valtouse = true;
@@ -107,6 +109,7 @@ public class SFourActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //set the player symbol to O
+                player = "O";
                 playsym = "O";
                 defplaysym = "O";
                 valtouse = false;
@@ -220,12 +223,17 @@ public class SFourActivity extends AppCompatActivity {
                 d = i[3];
 
                 if (!TextUtils.isEmpty(asv[a]) && asv[a] == asv[b] && asv[a] == asv[c] && asv[a] == asv[d]) {
-                    String winner = "Winner: " + asv[a];
+
+                    String p = asv[a] == player ? "Player 1" : "Computer";
+                    String winner = "Winner: " + p;
+
                     Toast.makeText(this, "Game Over", Toast.LENGTH_SHORT).show();
                     gamewon = true;
 
                     TextView win = (TextView)findViewById(R.id.winner_status);
                     win.setText(winner);
+                    TextView pt = (TextView) findViewById(R.id.player_turn_id);
+                    pt.setText("Game Over");
 
                     break;
                 }
