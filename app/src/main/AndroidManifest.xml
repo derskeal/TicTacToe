@@ -19,7 +19,8 @@
         <activity android:name=".MThreeActivity" />
         <activity android:name=".MFourActivity" />
         <activity android:name=".MFiveActivity" />
-        <activity android:name=".SThreeActivity"></activity>
+        <activity android:name=".SThreeActivity" />
+        <activity android:name=".ScoreBoardActivity"></activity>
     </application>
 
 </manifest>
