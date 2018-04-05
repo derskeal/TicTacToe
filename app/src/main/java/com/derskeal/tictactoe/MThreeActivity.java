@@ -27,9 +27,6 @@ public class MThreeActivity extends AppCompatActivity {
     public String player2 = "";
     public String[] player = {"","",""};
 
-    public SharedPreferences sharedPref = this.getSharedPreferences( "ttts", Context.MODE_PRIVATE);
-    public SharedPreferences.Editor storage = sharedPref.edit();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,6 +135,9 @@ public class MThreeActivity extends AppCompatActivity {
     }
 
     public void cell_clicked(View vv) {
+        SharedPreferences sharedPref = getSharedPreferences( "ttts", Context.MODE_PRIVATE);
+        SharedPreferences.Editor storage = sharedPref.edit();
+
         if (gamewon) {
 
         } else if (taptimes == 9 && !gamewon) {

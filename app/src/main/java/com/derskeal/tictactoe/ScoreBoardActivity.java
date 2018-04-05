@@ -28,21 +28,21 @@ public class ScoreBoardActivity extends AppCompatActivity {
         int p2l = sp.getInt("player2losses", 0);
 
         TextView tv = (TextView)findViewById(R.id.w1);
-        tv.setText(p1w);
+        tv.setText(""+p1w);
 
         tv = (TextView)findViewById(R.id.w2);
-        tv.setText(p2w);
+        tv.setText(""+p2w);
 
         tv = (TextView)findViewById(R.id.d1);
-        tv.setText(p1d);
+        tv.setText(""+p1d);
 
         tv = (TextView)findViewById(R.id.d2);
-        tv.setText(p2d);
+        tv.setText(""+p2d);
 
         tv = (TextView)findViewById(R.id.l1);
-        tv.setText(p1l);
+        tv.setText(""+p1l);
 
         tv = (TextView)findViewById(R.id.l2);
-        tv.setText(p2l);
+        tv.setText(""+p2l);
     }
 }
