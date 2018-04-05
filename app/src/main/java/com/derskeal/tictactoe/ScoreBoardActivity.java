@@ -15,6 +15,7 @@ public class ScoreBoardActivity extends AppCompatActivity {
         setTheStage();
     }
 
+    //@// TODO: 05/04/2018 revamp the below code to reflect the new scoreboard structure
     public void setTheStage() {
         SharedPreferences sp = getSharedPreferences("ttts", this.MODE_PRIVATE);
 
