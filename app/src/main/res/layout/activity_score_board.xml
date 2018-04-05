@@ -167,6 +167,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
+                    android:id="@+id/w1"
                     />
 
                 <TextView
@@ -174,6 +175,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
+                    android:id="@+id/w2"
                     />
             </TableRow>
 
@@ -189,6 +191,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
+                    android:id="@+id/d1"
                     />
 
                 <TextView
@@ -196,6 +199,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
+                    android:id="@+id/d2"
                     />
             </TableRow>
 
@@ -211,6 +215,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
+                    android:id="@+id/l1"
                     />
 
                 <TextView
@@ -218,6 +223,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
+                    android:id="@+id/l2"
                     />
             </TableRow>
         </TableLayout>

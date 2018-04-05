@@ -79,7 +79,7 @@ public class SThreeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // TODO: 28/03/2018 add single player mode/AI
+    // TODO: 28/03/2018 add single player mode/AI and s4 n s5
 
     public void avatar_select() {
         //Toast.makeText(this, "chai", Toast.LENGTH_SHORT).show();
@@ -132,9 +132,6 @@ public class SThreeActivity extends AppCompatActivity {
         /*final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
         executorService.schedule(App::myTask, 2, TimeUnit.SECONDS);*/
         cell_clicked2(v);
-
-        //todo: schedule a task should be better than this
-        //    TimeUnit.SECONDS.sleep(2);
 
         TextView k = (TextView)findViewById(R.id.player_turn_id);
         k.setText("Computer is playing");

@@ -1,6 +1,8 @@
 package com.derskeal.tictactoe;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +27,9 @@ public class MThreeActivity extends AppCompatActivity {
     public String player2 = "";
     public String[] player = {"","",""};
 
+    public SharedPreferences sharedPref = this.getSharedPreferences( "ttts", Context.MODE_PRIVATE);
+    public SharedPreferences.Editor storage = sharedPref.edit();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +46,17 @@ public class MThreeActivity extends AppCompatActivity {
             }
         });
 
-        //todo player character choice
 
         avatar_select();
         //avatar_select(2, "Player 2");
 
         TextView v = (TextView) findViewById(R.id.player_turn_id);
         v.setText("Player 1");
+
+        /*SharedPreferences sharedPref = this.getSharedPreferences( "ttts", Context.MODE_PRIVATE);
+        SharedPreferences.Editor storage = sharedPref.edit();*/
+
+        //if (sharedPref.getInt("player1",0) == 0)
 
     }
 
@@ -171,6 +180,15 @@ public class MThreeActivity extends AppCompatActivity {
                 pti.setText(pt);
             } else if (taptimes >= 9) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
+                //String pp = p == "Player 1" ? "player1" : "player2";
+                int vp1 = sharedPref.getInt("player1draws", 0);
+                int vp2 = sharedPref.getInt("player2draws", 0);
+                vp1++;
+                vp2++;
+                storage.putInt("player1draws",vp1);
+                storage.putInt("player2draws",vp2);
+                storage.apply();
+
             }
 
             else {
@@ -200,7 +218,32 @@ public class MThreeActivity extends AppCompatActivity {
                 c = i[2];
 
                 if (!TextUtils.isEmpty(asv[a]) && asv[a] == asv[b] && asv[a] == asv[c]) {
-                    String winner = "Winner: " + asv[a] == "X" ? "Player 1" : "Player 2";
+
+                    String p1 = "player1";
+                    String p2 = "player2";
+
+                    String p = asv[a] == player[1] ? "Player 1" : "Player 2";
+                    String winner = "Winner: " + p;
+
+
+
+                    String pp = p == "Player 1" ? "player1" : "player2";
+                    String op = p == "Player 1" ? "player2" : "player1";
+
+                    int vp = sharedPref.getInt(pp+"wins", 0);
+                    int vpl = sharedPref.getInt(op+"losses", 0);
+                    vp++;
+                    vpl++;
+
+
+                    storage.putInt(pp+"wins",vp);
+                    storage.putInt(op+"losses",vpl);
+
+
+                    storage.apply();
+
+
+
                     Toast.makeText(this, "Game Over", Toast.LENGTH_SHORT).show();
                     gamewon = true;
 
