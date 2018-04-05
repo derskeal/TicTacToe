@@ -23,8 +23,10 @@ public class SFourActivity extends AppCompatActivity {
     public String[] asv = new String[17]; //asv - all squares value
     public boolean gamewon = false;
 
-    public String playsym;
-    public String player;
+    //public String playsym;
+    //public String player;
+    //the above two perform the same function as the below, therefore:
+    //todo find a way to eradicate them
     public String defplaysym;
 
     public int r1;
@@ -96,8 +98,8 @@ public class SFourActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //set the player symbol to X
-                player = "X";
-                playsym = "X";
+                //player = "X";
+                //playsym = "X";
                 defplaysym = "X";
                 valtouse = true;
                 TextView v = (TextView) findViewById(R.id.player_turn_id);
@@ -109,8 +111,8 @@ public class SFourActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //set the player symbol to O
-                player = "O";
-                playsym = "O";
+               // player = "O";
+                //playsym = "O";
                 defplaysym = "O";
                 valtouse = false;
                 TextView v = (TextView) findViewById(R.id.player_turn_id);
@@ -136,7 +138,11 @@ public class SFourActivity extends AppCompatActivity {
         cell_clicked2(v);
 
         TextView k = (TextView)findViewById(R.id.player_turn_id);
-        k.setText("Computer is playing");
+        if(!gamewon) {
+            k.setText("Computer is playing");
+        } else if (gamewon) {
+            k.setText("Game Over");
+        }
         Handler handler = new Handler();
         handler.postDelayed(new Runnable()
         {
@@ -224,7 +230,7 @@ public class SFourActivity extends AppCompatActivity {
 
                 if (!TextUtils.isEmpty(asv[a]) && asv[a] == asv[b] && asv[a] == asv[c] && asv[a] == asv[d]) {
 
-                    String p = asv[a] == player ? "Player 1" : "Computer";
+                    String p = asv[a] == defplaysym ? "Player 1" : "Computer";
                     String winner = "Winner: " + p;
 
                     Toast.makeText(this, "Game Over", Toast.LENGTH_SHORT).show();

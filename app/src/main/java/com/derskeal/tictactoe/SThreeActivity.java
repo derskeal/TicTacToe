@@ -26,6 +26,8 @@ public class SThreeActivity extends AppCompatActivity {
     public String[] asv = new String[10]; //asv - all squares value
     public boolean gamewon = false;
     public String playsym;
+
+    //anywhere you find defplaysym, it is performing the same function as the player variable
     public String defplaysym;
 
     public int r1;
@@ -130,7 +132,11 @@ public class SThreeActivity extends AppCompatActivity {
         cell_clicked2(v);
 
         TextView k = (TextView)findViewById(R.id.player_turn_id);
-        k.setText("Computer is playing");
+        if(!gamewon) {
+            k.setText("Computer is playing");
+        } else if (gamewon) {
+            k.setText("Game Over");
+        }
         Handler handler = new Handler();
         handler.postDelayed(new Runnable()
         {
@@ -213,7 +219,10 @@ public class SThreeActivity extends AppCompatActivity {
                 c = i[2];
 
                 if (!TextUtils.isEmpty(asv[a]) && asv[a] == asv[b] && asv[a] == asv[c]) {
-                    String winner = "Winner: " + asv[a];
+                    //String winner = "Winner: " + asv[a];
+                    String p = asv[a] == defplaysym ? "Player 1" : "Computer";
+                    String winner = "Winner: " + p;
+
                     Toast.makeText(this, "Game Over", Toast.LENGTH_SHORT).show();
                     gamewon = true;
 
