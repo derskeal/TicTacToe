@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,7 +19,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="VS Computer"
+            android:text="VS Computer (Single Player)"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3x3"
             android:textSize="20sp"
             android:layout_gravity="center"
             />
@@ -57,6 +67,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
+                    android:id="@+id/sthreewinsp1"
                     />
 
                 <TextView
@@ -64,6 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
+                    android:id="@+id/sthreewinsp2"
                     />
             </TableRow>
 
@@ -79,6 +91,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
+                    android:id="@+id/s3drawsp1"
                     />
 
                 <TextView
@@ -86,6 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
+                    android:id="@+id/s3drawsp2"
                     />
             </TableRow>
 
@@ -101,6 +115,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
+                    android:id="@+id/sthreelossesp1"
                     />
 
                 <TextView
@@ -108,25 +123,15 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
+                    android:id="@+id/sthreelossesp2"
                     />
             </TableRow>
         </TableLayout>
-    </LinearLayout>
 
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical"
-        android:layout_below="@+id/vscom"
-        android:layout_marginTop="30dp"
-        >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="VS Human"
-            android:id="@+id/vshuman"
+            android:text="4x4"
             android:textSize="20sp"
             android:layout_gravity="center"
             />
@@ -167,7 +172,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/w1"
+                    android:id="@+id/sfourwinsp1"
                     />
 
                 <TextView
@@ -175,7 +180,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/w2"
+                    android:id="@+id/sfourwinsp2"
                     />
             </TableRow>
 
@@ -191,7 +196,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/d1"
+                    android:id="@+id/sfourdrawsp1"
                     />
 
                 <TextView
@@ -199,7 +204,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/d2"
+                    android:id="@+id/sfourdrawsp2"
                     />
             </TableRow>
 
@@ -215,7 +220,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/l1"
+                    android:id="@+id/sfourlossesp1"
                     />
 
                 <TextView
@@ -223,10 +228,449 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/l2"
+                    android:id="@+id/sfourlossesp2"
+                    />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5x5"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            />
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TableRow>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text=""
+                    android:layout_marginRight="100dp"
+                    />
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Player 1"
+                    android:padding="5dp"
+                    />
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Player 2"
+                    android:padding="5dp"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Games Won"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/s5winsp1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/s5winsp2"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Games Drawn"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/s5drawsp1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/s5drawsp2"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Games Lost"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/s5lossesp1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/s5lossesp2"
+                    />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:layout_below="@+id/vscom"
+        android:layout_marginTop="30dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VS Human (Multiplayer)"
+            android:id="@+id/vshuman"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3x3"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            />
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TableRow>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text=""
+                    android:layout_marginRight="100dp"
+                    />
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Player 1"
+                    android:padding="5dp"
+                    />
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Player 2"
+                    android:padding="5dp"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Games Won"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/mthreewinsp1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/mthreewinsp2"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Games Drawn"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/m3drawsp1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/m3drawsp2"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Games Lost"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/mthreelossesp1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/mthreelossesp2"
+                    />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4x4"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            />
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TableRow>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text=""
+                    android:layout_marginRight="100dp"
+                    />
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Player 1"
+                    android:padding="5dp"
+                    />
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Player 2"
+                    android:padding="5dp"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Games Won"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/mfourwinsp1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/mfourwinsp2"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Games Drawn"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/mfourdrawsp1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/mfourdrawsp2"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Games Lost"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/mfourlossesp1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/mfourlossesp2"
+                    />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5x5"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            />
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TableRow>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text=""
+                    android:layout_marginRight="100dp"
+                    />
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Player 1"
+                    android:padding="5dp"
+                    />
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Player 2"
+                    android:padding="5dp"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Games Won"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/m5winsp1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/m5winsp2"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Games Drawn"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/m5drawsp1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/m5drawsp2"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Games Lost"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/m5lossesp1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="val"
+                    android:id="@+id/m5lossesp2"
                     />
             </TableRow>
         </TableLayout>
     </LinearLayout>
 
 </RelativeLayout>
+</ScrollView>

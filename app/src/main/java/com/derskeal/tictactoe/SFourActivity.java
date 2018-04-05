@@ -29,6 +29,8 @@ public class SFourActivity extends AppCompatActivity {
     //todo find a way to eradicate them
     public String defplaysym;
 
+    //@todo save game history
+
     public int r1;
     public boolean player_played;
 

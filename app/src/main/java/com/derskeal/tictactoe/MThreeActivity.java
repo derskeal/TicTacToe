@@ -135,7 +135,7 @@ public class MThreeActivity extends AppCompatActivity {
     }
 
     public void cell_clicked(View vv) {
-        SharedPreferences sharedPref = getSharedPreferences( "ttts", Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences( "tttm3", Context.MODE_PRIVATE);
         SharedPreferences.Editor storage = sharedPref.edit();
 
         if (gamewon) {
@@ -181,12 +181,13 @@ public class MThreeActivity extends AppCompatActivity {
             } else if (taptimes >= 9) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
                 //String pp = p == "Player 1" ? "player1" : "player2";
-                int vp1 = sharedPref.getInt("player1draws", 0);
-                int vp2 = sharedPref.getInt("player2draws", 0);
+                //@todo the storage system needs to be revamped i.e divided to board-size-aware saves
+                int vp1 = sharedPref.getInt("m3player1draws", 0);
+                int vp2 = sharedPref.getInt("m3player2draws", 0);
                 vp1++;
                 vp2++;
-                storage.putInt("player1draws",vp1);
-                storage.putInt("player2draws",vp2);
+                storage.putInt("m3player1draws",vp1);
+                storage.putInt("m3player2draws",vp2);
                 storage.apply();
 
             }
