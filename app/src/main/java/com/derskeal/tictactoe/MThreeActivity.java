@@ -1,6 +1,8 @@
 package com.derskeal.tictactoe;
 
+import android.content.DialogInterface;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -19,6 +21,9 @@ public class MThreeActivity extends AppCompatActivity {
     public int[] tapinfotags = new int[9];
     public String[] asv = new String[10]; //asv - all squares value
     public boolean gamewon = false;
+    public String player1 = "";
+    public String player2 = "";
+    public String[] player = {"","",""};
 
 
     @Override
@@ -35,6 +40,15 @@ public class MThreeActivity extends AppCompatActivity {
                 reset_game();
             }
         });
+
+        //todo player character choice
+
+        avatar_select();
+        //avatar_select(2, "Player 2");
+
+        TextView v = (TextView) findViewById(R.id.player_turn_id);
+        v.setText("Player 1");
+
     }
 
     @Override
@@ -63,8 +77,56 @@ public class MThreeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // TODO: 28/03/2018 add single player mode/AI
-    // TODO: 28/03/2018 add 4x4 and 5x5 boxes
+    public void avatar_select() {
+        //Toast.makeText(this, "chai", Toast.LENGTH_SHORT).show();
+        // 1. Instantiate an AlertDialog.Builder with its constructor
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+
+        builder.setMessage("Please select your Player Symbol")
+                .setTitle("Player 1");
+
+        builder.setPositiveButton("X", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //set the player symbol to X
+                /*playsym = "X";
+                defplaysym = "X";*/
+                player[1] = "X";
+                player[2] = "O";
+                valtouse = true;
+                /*TextView v = (TextView) findViewById(R.id.player_turn_id);
+                v.setText("X");*/
+            }
+        });
+
+        builder.setNegativeButton("O", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //set the player symbol to O
+                /*playsym = "O";
+                defplaysym = "O";*/
+                player[1] = "O";
+                player[2] = "X";
+                valtouse = false;
+                /*TextView v = (TextView) findViewById(R.id.player_turn_id);
+                v.setText("O");*/
+            }
+        });
+
+        builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MThreeActivity.this, "Player Cancelled", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
+
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+    }
 
     public void cell_clicked(View vv) {
         if (gamewon) {
@@ -91,9 +153,11 @@ public class MThreeActivity extends AppCompatActivity {
             if (taptimes < 10 && TextUtils.isEmpty(v.getText().toString())) {
                 String playsym;
                 if (valtouse) {
-                    playsym = "X";
+                    playsym = player[1];
+                    //playsym = "X";
                 } else {
-                    playsym = "O";
+                    playsym = player[2];
+                    //playsym = "O";
                 }
 
                 int tag = Integer.parseInt(v.getTag().toString());
@@ -103,7 +167,7 @@ public class MThreeActivity extends AppCompatActivity {
                 valtouse = !valtouse;
 
                 TextView pti = (TextView) findViewById(R.id.player_turn_id);
-                String pt = valtouse ? "X" : "O";
+                String pt = valtouse ? "Player 1" : "Player 2";
                 pti.setText(pt);
             } else if (taptimes >= 9) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
@@ -136,7 +200,7 @@ public class MThreeActivity extends AppCompatActivity {
                 c = i[2];
 
                 if (!TextUtils.isEmpty(asv[a]) && asv[a] == asv[b] && asv[a] == asv[c]) {
-                    String winner = "Winner: " + asv[a];
+                    String winner = "Winner: " + asv[a] == "X" ? "Player 1" : "Player 2";
                     Toast.makeText(this, "Game Over", Toast.LENGTH_SHORT).show();
                     gamewon = true;
 
@@ -168,7 +232,7 @@ public class MThreeActivity extends AppCompatActivity {
 
         valtouse = true;
         TextView pti = (TextView) findViewById(R.id.player_turn_id);
-        String pt = valtouse ? "X" : "O";
+        String pt = valtouse ? "Player 1" : "Player 2";
         pti.setText(pt);
 
         asv = new String[10];

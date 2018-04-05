@@ -44,4 +44,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);*/
     }
 
+    public void scoreboard(View v) {
+        Intent intent = new Intent(this, ScoreBoardActivity.class);
+        startActivity(intent);
+    }
+
 }
