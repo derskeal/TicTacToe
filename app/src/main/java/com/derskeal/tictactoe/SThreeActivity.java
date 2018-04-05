@@ -22,8 +22,7 @@ public class SThreeActivity extends AppCompatActivity {
 
     public boolean valtouse = true;
     public int taptimes = 0;
-    public String[] tapinfotext = new String[9];
-    public int[] tapinfotags = new int[9];
+
     public String[] asv = new String[10]; //asv - all squares value
     public boolean gamewon = false;
     public String playsym;
@@ -50,7 +49,6 @@ public class SThreeActivity extends AppCompatActivity {
         });
 
         avatar_select();
-        //Toast.makeText(this, ""+ai_play(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -129,8 +127,6 @@ public class SThreeActivity extends AppCompatActivity {
     }
 
     public void cell_clicked(View v) {
-        /*final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
-        executorService.schedule(App::myTask, 2, TimeUnit.SECONDS);*/
         cell_clicked2(v);
 
         TextView k = (TextView)findViewById(R.id.player_turn_id);
@@ -144,10 +140,6 @@ public class SThreeActivity extends AppCompatActivity {
                 ai_play();
             }
         }, 1000);
-
-        //k.setText("");
-
-        //ai_play();
 
     }
 

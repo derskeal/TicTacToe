@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void splay_4x4(View v) {
-        /*Intent intent = new Intent(this, SFourActivity.class);
-        startActivity(intent);*/
+        Intent intent = new Intent(this, SFourActivity.class);
+        startActivity(intent);
     }
 
     public void splay_5x5(View v) {
