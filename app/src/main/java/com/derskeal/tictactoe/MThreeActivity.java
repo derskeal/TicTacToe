@@ -183,15 +183,6 @@ public class MThreeActivity extends AppCompatActivity {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
 
                 //String pp = p == "Player 1" ? "player1" : "player2";
-                //@todo the storage system needs to be revamped i.e divided to board-size-aware saves
-                int vp1 = sharedPref.getInt("player1draws", 0);
-                int vp2 = sharedPref.getInt("player2draws", 0);
-                vp1++;
-                vp2++;
-                storage.putInt("player1draws",vp1);
-                storage.putInt("player2draws",vp2);
-                storage.apply();
-                gamedrawn = true;
 
             }
 
@@ -272,8 +263,18 @@ public class MThreeActivity extends AppCompatActivity {
             }
 
             if (taptimes == 9 && !gamewon) {
+                //if the game ends in a draw, the below code executes
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
                 gamedrawn = true;
+
+                int vp1 = sharedPref.getInt("player1draws", 0);
+                int vp2 = sharedPref.getInt("player2draws", 0);
+                vp1++;
+                vp2++;
+                storage.putInt("player1draws",vp1);
+                storage.putInt("player2draws",vp2);
+                storage.apply();
+
 
                 String pt = "Game Over";
                 pti.setText(pt);
