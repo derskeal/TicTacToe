@@ -183,12 +183,12 @@ public class MFiveActivity extends AppCompatActivity {
             } else if (taptimes >= 25) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
 
-                int vp1 = sharedPref.getInt("mfiveplayer1draws", 0);
-                int vp2 = sharedPref.getInt("mfiveplayer2draws", 0);
+                int vp1 = sharedPref.getInt("player1draws", 0);
+                int vp2 = sharedPref.getInt("player2draws", 0);
                 vp1++;
                 vp2++;
-                storage.putInt("mfiveplayer1draws",vp1);
-                storage.putInt("mfiveplayer2draws",vp2);
+                storage.putInt("player1draws",vp1);
+                storage.putInt("player2draws",vp2);
                 storage.apply();
             }
 
@@ -204,7 +204,7 @@ public class MFiveActivity extends AppCompatActivity {
                     {1, 2, 3, 4, 5},
                     {6, 7, 8, 9, 10},
                     { 11, 12, 13, 14, 15},
-                    {16, 17, 18, 19, 20},
+                    {16, 17, 18, 1},
                     {1, 6, 11, 16, 21},
                     {2, 7, 12, 17, 22},
                     {3, 8, 13, 18, 23},

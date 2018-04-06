@@ -175,12 +175,12 @@ public class MFourActivity extends AppCompatActivity {
 
             } else if (taptimes >= 16) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
-                int vp1 = sharedPref.getInt("mfourplayer1draws", 0);
-                int vp2 = sharedPref.getInt("mfourplayer2draws", 0);
+                int vp1 = sharedPref.getInt("player1draws", 0);
+                int vp2 = sharedPref.getInt("player2draws", 0);
                 vp1++;
                 vp2++;
-                storage.putInt("mfourplayer1draws",vp1);
-                storage.putInt("mfourplayer2draws",vp2);
+                storage.putInt("player1draws",vp1);
+                storage.putInt("player2draws",vp2);
                 storage.apply();
             }
 

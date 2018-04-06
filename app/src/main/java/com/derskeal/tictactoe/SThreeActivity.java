@@ -197,12 +197,12 @@ public class SThreeActivity extends AppCompatActivity {
             } else if (taptimes >= 9) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
                 //save the draw
-                int vp1 = sharedPref.getInt("sthreeplayer1draws", 0);
-                int vp2 = sharedPref.getInt("sthreeplayer2draws", 0);
+                int vp1 = sharedPref.getInt("player1draws", 0);
+                int vp2 = sharedPref.getInt("player2draws", 0);
                 vp1++;
                 vp2++;
-                storage.putInt("sthreeplayer1draws",vp1);
-                storage.putInt("sthreeplayer2draws",vp2);
+                storage.putInt("player1draws",vp1);
+                storage.putInt("player2draws",vp2);
                 storage.apply();
             }
 

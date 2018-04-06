@@ -23,6 +23,7 @@ public class MThreeActivity extends AppCompatActivity {
 
     public String[] asv = new String[10]; //asv - all squares value
     public boolean gamewon = false;
+    public boolean gamedrawn = false;
 
     public String[] player = {"","",""};
 
@@ -46,7 +47,7 @@ public class MThreeActivity extends AppCompatActivity {
         avatar_select();
         //avatar_select(2, "Player 2");
 
-        TextView v = (TextView) findViewById(R.id.player_turn_id);
+        //TextView v = (TextView) findViewById(R.id.player_turn_id);
         //v.setText("");
 
     }
@@ -132,7 +133,7 @@ public class MThreeActivity extends AppCompatActivity {
         cell_clicked2(v);
 
         TextView k = (TextView)findViewById(R.id.player_turn_id);
-        if(gamewon) {
+        if(gamewon || gamedrawn) {
             k.setText("Game Over");
         }
 
@@ -145,7 +146,7 @@ public class MThreeActivity extends AppCompatActivity {
         if (gamewon) {
 
         } else if (taptimes == 9 && !gamewon) {
-            Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
+
         }
 
         else {
@@ -154,8 +155,6 @@ public class MThreeActivity extends AppCompatActivity {
         /*
         * if filled, do nothing
         * if empty, fill it with the appropriate player symbol and,
-        *
-        *
         * check if there is a winner
         *
         *
@@ -179,27 +178,34 @@ public class MThreeActivity extends AppCompatActivity {
                 v.setText(playsym);
                 valtouse = !valtouse;
 
-                TextView pti = (TextView) findViewById(R.id.player_turn_id);
-                String pt = valtouse ? "Player 1" : "Player 2";
-                pti.setText(pt);
-
 
             } else if (taptimes >= 9) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
+
                 //String pp = p == "Player 1" ? "player1" : "player2";
                 //@todo the storage system needs to be revamped i.e divided to board-size-aware saves
-                int vp1 = sharedPref.getInt("mthreeplayer1draws", 0);
-                int vp2 = sharedPref.getInt("mthreeplayer2draws", 0);
+                int vp1 = sharedPref.getInt("player1draws", 0);
+                int vp2 = sharedPref.getInt("player2draws", 0);
                 vp1++;
                 vp2++;
-                storage.putInt("mthreeplayer1draws",vp1);
-                storage.putInt("mthreeplayer2draws",vp2);
+                storage.putInt("player1draws",vp1);
+                storage.putInt("player2draws",vp2);
                 storage.apply();
+                gamedrawn = true;
 
             }
 
             else {
                 Toast.makeText(this, "Already played cell", Toast.LENGTH_SHORT).show();
+            }
+
+            TextView pti = (TextView) findViewById(R.id.player_turn_id);
+            if(!gamedrawn) {
+                String pt = valtouse ? "Player 1" : "Player 2";
+                pti.setText(pt); //this guy sets the player turn
+            } else {
+                String pt = "Game Over";
+                pti.setText(pt);
             }
 
             taptimes++;
@@ -267,6 +273,11 @@ public class MThreeActivity extends AppCompatActivity {
 
             if (taptimes == 9 && !gamewon) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
+                gamedrawn = true;
+
+                String pt = "Game Over";
+                pti.setText(pt);
+
             }
 
 
