@@ -202,8 +202,7 @@ public class MThreeActivity extends AppCompatActivity {
 
             taptimes++;
 
-            //Array e =
-            //Object e = new Object();
+            //
             int[][] wi = {
                     {1, 2, 3},
                     {4, 5, 6},

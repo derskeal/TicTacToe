@@ -126,10 +126,20 @@ public class MFourActivity extends AppCompatActivity {
 
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    public void cell_clicked(View v) {
+        cell_clicked2(v);
+
+        TextView k = (TextView)findViewById(R.id.player_turn_id);
+        if(gamewon || gamedrawn) {
+            k.setText("Game Over");
+        }
 
     }
 
-    public void cell_clicked(View vv) {
+
+    public void cell_clicked2(View vv) {
         SharedPreferences sharedPref = getSharedPreferences( "tttm4", Context.MODE_PRIVATE);
         SharedPreferences.Editor storage = sharedPref.edit();
 

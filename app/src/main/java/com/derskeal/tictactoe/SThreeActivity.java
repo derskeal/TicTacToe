@@ -27,6 +27,8 @@ public class SThreeActivity extends AppCompatActivity {
 
     public String[] asv = new String[10]; //asv - all squares value
     public boolean gamewon = false;
+    public boolean gamedrawn = false;
+
     public String playsym;
 
     //anywhere you find defplaysym, it is performing the same function as the player variable
@@ -134,9 +136,9 @@ public class SThreeActivity extends AppCompatActivity {
         cell_clicked2(v);
 
         TextView k = (TextView)findViewById(R.id.player_turn_id);
-        if(!gamewon) {
+        if(!gamewon || !gamedrawn) {
             k.setText("Computer is playing");
-        } else if (gamewon) {
+        } else if (gamewon || gamedrawn) {
             k.setText("Game Over");
         }
         Handler handler = new Handler();
@@ -192,7 +194,7 @@ public class SThreeActivity extends AppCompatActivity {
                 valtouse = !valtouse;
 
                 TextView pti = (TextView) findViewById(R.id.player_turn_id);
-                String pt = valtouse ? "X" : "O";
+                String pt = valtouse ? "Player 1" : "Player 2";
                 pti.setText(pt);
             } else if (taptimes >= 9) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
@@ -204,6 +206,7 @@ public class SThreeActivity extends AppCompatActivity {
                 storage.putInt("player1draws",vp1);
                 storage.putInt("player2draws",vp2);
                 storage.apply();
+                gamedrawn = true;
             }
 
             else {
@@ -266,6 +269,7 @@ public class SThreeActivity extends AppCompatActivity {
 
             if (taptimes == 9 && !gamewon) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
+                gamedrawn = true;
             }
 
 
@@ -283,7 +287,7 @@ public class SThreeActivity extends AppCompatActivity {
 
         valtouse = defplaysym == "X";
         TextView pti = (TextView) findViewById(R.id.player_turn_id);
-        String pt = defplaysym;
+        String pt = valtouse ? "Player 1" : "Player 2";;
         pti.setText(pt);
 
         asv = new String[10];
