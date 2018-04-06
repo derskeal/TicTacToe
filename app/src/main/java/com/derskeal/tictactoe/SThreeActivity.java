@@ -1,6 +1,8 @@
 package com.derskeal.tictactoe;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
@@ -151,6 +153,10 @@ public class SThreeActivity extends AppCompatActivity {
 
 
     public void cell_clicked2(View vv) {
+        SharedPreferences sharedPref = getSharedPreferences( "ttts3", this.MODE_PRIVATE);
+        SharedPreferences.Editor storage = sharedPref.edit();
+
+
         if (gamewon) {
 
         } else if (taptimes == 9 && !gamewon) {
@@ -190,6 +196,14 @@ public class SThreeActivity extends AppCompatActivity {
                 pti.setText(pt);
             } else if (taptimes >= 9) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
+                //save the draw
+                int vp1 = sharedPref.getInt("sthreeplayer1draws", 0);
+                int vp2 = sharedPref.getInt("sthreeplayer2draws", 0);
+                vp1++;
+                vp2++;
+                storage.putInt("sthreeplayer1draws",vp1);
+                storage.putInt("sthreeplayer2draws",vp2);
+                storage.apply();
             }
 
             else {
@@ -222,6 +236,18 @@ public class SThreeActivity extends AppCompatActivity {
                     //String winner = "Winner: " + asv[a];
                     String p = asv[a] == defplaysym ? "Player 1" : "Computer";
                     String winner = "Winner: " + p;
+
+                    String pp = p == "Player 1" ? "player1" : "computer";
+                    String op = p == "Player 1" ? "computer" : "player1";
+
+                    int vp = sharedPref.getInt(pp+"wins", 0);
+                    int vpl = sharedPref.getInt(op+"losses", 0);
+                    vp++;
+                    vpl++;
+
+                    storage.putInt(pp+"wins",vp);
+                    storage.putInt(op+"losses",vpl);
+                    storage.apply();
 
                     Toast.makeText(this, "Game Over", Toast.LENGTH_SHORT).show();
                     gamewon = true;

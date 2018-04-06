@@ -17,6 +17,8 @@ public class MFourActivity extends AppCompatActivity {
     public String[] asv = new String[17]; //asv - all squares value
     public boolean gamewon = false;
 
+    public String[] player = {"","",""};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,6 +1,7 @@
 package com.derskeal.tictactoe;
 
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
@@ -159,6 +160,10 @@ public class SFourActivity extends AppCompatActivity {
 
 
     public void cell_clicked2(View vv) {
+
+        SharedPreferences sharedPref = getSharedPreferences( "ttts4", this.MODE_PRIVATE);
+        SharedPreferences.Editor storage = sharedPref.edit();
+
         if (gamewon) {
 
         } else if (taptimes == 16 && !gamewon) {

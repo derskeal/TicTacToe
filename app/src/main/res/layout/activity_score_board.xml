@@ -91,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/s3drawsp1"
+                    android:id="@+id/sthreedrawsp1"
                     />
 
                 <TextView
@@ -99,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/s3drawsp2"
+                    android:id="@+id/sthreedrawsp2"
                     />
             </TableRow>
 
@@ -277,7 +277,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/s5winsp1"
+                    android:id="@+id/sfivewinsp1"
                     />
 
                 <TextView
@@ -285,7 +285,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/s5winsp2"
+                    android:id="@+id/sfivewinsp2"
                     />
             </TableRow>
 
@@ -301,7 +301,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/s5drawsp1"
+                    android:id="@+id/sfivedrawsp1"
                     />
 
                 <TextView
@@ -309,7 +309,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/s5drawsp2"
+                    android:id="@+id/sfivedrawsp2"
                     />
             </TableRow>
 
@@ -325,7 +325,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/s5lossesp1"
+                    android:id="@+id/sfivelossesp1"
                     />
 
                 <TextView
@@ -333,7 +333,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/s5lossesp2"
+                    android:id="@+id/sfivelossesp2"
                     />
             </TableRow>
         </TableLayout>
@@ -424,7 +424,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/m3drawsp1"
+                    android:id="@+id/mthreedrawsp1"
                     />
 
                 <TextView
@@ -432,7 +432,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/m3drawsp2"
+                    android:id="@+id/mthreedrawsp2"
                     />
             </TableRow>
 
@@ -610,7 +610,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/m5winsp1"
+                    android:id="@+id/mfivewinsp1"
                     />
 
                 <TextView
@@ -618,7 +618,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/m5winsp2"
+                    android:id="@+id/mfivewinsp2"
                     />
             </TableRow>
 
@@ -634,7 +634,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/m5drawsp1"
+                    android:id="@+id/mfivedrawsp1"
                     />
 
                 <TextView
@@ -642,7 +642,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/m5drawsp2"
+                    android:id="@+id/mfivedrawsp2"
                     />
             </TableRow>
 
@@ -658,7 +658,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/m5lossesp1"
+                    android:id="@+id/mfivelossesp1"
                     />
 
                 <TextView
@@ -666,7 +666,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="val"
-                    android:id="@+id/m5lossesp2"
+                    android:id="@+id/mfivelossesp2"
                     />
             </TableRow>
         </TableLayout>

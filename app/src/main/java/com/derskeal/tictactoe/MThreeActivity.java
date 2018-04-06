@@ -19,12 +19,10 @@ public class MThreeActivity extends AppCompatActivity {
 
     public boolean valtouse = true;
     public int taptimes = 0;
-    public String[] tapinfotext = new String[9];
-    public int[] tapinfotags = new int[9];
+
     public String[] asv = new String[10]; //asv - all squares value
     public boolean gamewon = false;
-    public String player1 = "";
-    public String player2 = "";
+
     public String[] player = {"","",""};
 
 
@@ -182,12 +180,12 @@ public class MThreeActivity extends AppCompatActivity {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
                 //String pp = p == "Player 1" ? "player1" : "player2";
                 //@todo the storage system needs to be revamped i.e divided to board-size-aware saves
-                int vp1 = sharedPref.getInt("m3player1draws", 0);
-                int vp2 = sharedPref.getInt("m3player2draws", 0);
+                int vp1 = sharedPref.getInt("mthreeplayer1draws", 0);
+                int vp2 = sharedPref.getInt("mthreeplayer2draws", 0);
                 vp1++;
                 vp2++;
-                storage.putInt("m3player1draws",vp1);
-                storage.putInt("m3player2draws",vp2);
+                storage.putInt("mthreeplayer1draws",vp1);
+                storage.putInt("mthreeplayer2draws",vp2);
                 storage.apply();
 
             }
@@ -239,8 +237,6 @@ public class MThreeActivity extends AppCompatActivity {
 
                     storage.putInt(pp+"wins",vp);
                     storage.putInt(op+"losses",vpl);
-
-
                     storage.apply();
 
 
