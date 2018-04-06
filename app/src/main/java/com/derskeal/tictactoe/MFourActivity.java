@@ -20,6 +20,7 @@ public class MFourActivity extends AppCompatActivity {
     public int taptimes = 0;
     public String[] asv = new String[17]; //asv - all squares value
     public boolean gamewon = false;
+    public boolean gamedrawn = false;
 
     public String[] player = {"","",""};
 
@@ -40,8 +41,8 @@ public class MFourActivity extends AppCompatActivity {
 
         avatar_select();
 
-        TextView v = (TextView) findViewById(R.id.player_turn_id);
-        v.setText("Player 1");
+        /*TextView v = (TextView) findViewById(R.id.player_turn_id);
+        v.setText("Player 1");*/
     }
 
     //Rules:
@@ -175,17 +176,20 @@ public class MFourActivity extends AppCompatActivity {
 
             } else if (taptimes >= 16) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
-                int vp1 = sharedPref.getInt("player1draws", 0);
-                int vp2 = sharedPref.getInt("player2draws", 0);
-                vp1++;
-                vp2++;
-                storage.putInt("player1draws",vp1);
-                storage.putInt("player2draws",vp2);
-                storage.apply();
+
             }
 
             else {
                 Toast.makeText(this, "Already played cell", Toast.LENGTH_SHORT).show();
+            }
+
+            TextView pti = (TextView) findViewById(R.id.player_turn_id);
+            if(!gamedrawn) {
+                String pt = valtouse ? "Player 1" : "Player 2";
+                pti.setText(pt); //this guy sets the player turn
+            } else {
+                String pt = "Game Over";
+                pti.setText(pt);
             }
 
             taptimes++;
@@ -250,6 +254,18 @@ public class MFourActivity extends AppCompatActivity {
 
             if (taptimes == 16 && !gamewon) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
+
+                int vp1 = sharedPref.getInt("player1draws", 0);
+                int vp2 = sharedPref.getInt("player2draws", 0);
+                vp1++;
+                vp2++;
+                storage.putInt("player1draws",vp1);
+                storage.putInt("player2draws",vp2);
+                storage.apply();
+
+                gamedrawn = true;
+                String pt = "Game Over";
+                pti.setText(pt);
             }
 
 
