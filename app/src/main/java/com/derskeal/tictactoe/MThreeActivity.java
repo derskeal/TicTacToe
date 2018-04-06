@@ -3,6 +3,7 @@ package com.derskeal.tictactoe;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -46,7 +47,7 @@ public class MThreeActivity extends AppCompatActivity {
         //avatar_select(2, "Player 2");
 
         TextView v = (TextView) findViewById(R.id.player_turn_id);
-        v.setText("Player 1");
+        //v.setText("");
 
     }
 
@@ -127,7 +128,17 @@ public class MThreeActivity extends AppCompatActivity {
 
     }
 
-    public void cell_clicked(View vv) {
+    public void cell_clicked(View v) {
+        cell_clicked2(v);
+
+        TextView k = (TextView)findViewById(R.id.player_turn_id);
+        if(gamewon) {
+            k.setText("Game Over");
+        }
+
+    }
+
+    public void cell_clicked2(View vv) {
         SharedPreferences sharedPref = getSharedPreferences( "tttm3", Context.MODE_PRIVATE);
         SharedPreferences.Editor storage = sharedPref.edit();
 

@@ -187,7 +187,7 @@ public class ScoreBoardActivity extends AppCompatActivity {
         //MULTIPLAYER
         //5x5 BOX SECTION
 
-        sp = getSharedPreferences("tttm3", this.MODE_PRIVATE);
+        sp = getSharedPreferences("tttm5", this.MODE_PRIVATE);
 
         p1w = sp.getInt("player1wins", 0);
         p2w = sp.getInt("player2wins", 0);
