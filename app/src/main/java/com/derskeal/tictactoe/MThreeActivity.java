@@ -48,11 +48,6 @@ public class MThreeActivity extends AppCompatActivity {
         TextView v = (TextView) findViewById(R.id.player_turn_id);
         v.setText("Player 1");
 
-        /*SharedPreferences sharedPref = this.getSharedPreferences( "ttts", Context.MODE_PRIVATE);
-        SharedPreferences.Editor storage = sharedPref.edit();*/
-
-        //if (sharedPref.getInt("player1",0) == 0)
-
     }
 
     @Override
@@ -176,6 +171,8 @@ public class MThreeActivity extends AppCompatActivity {
                 TextView pti = (TextView) findViewById(R.id.player_turn_id);
                 String pt = valtouse ? "Player 1" : "Player 2";
                 pti.setText(pt);
+
+
             } else if (taptimes >= 9) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
                 //String pp = p == "Player 1" ? "player1" : "player2";
@@ -218,8 +215,9 @@ public class MThreeActivity extends AppCompatActivity {
 
                 if (!TextUtils.isEmpty(asv[a]) && asv[a] == asv[b] && asv[a] == asv[c]) {
 
-                    String p1 = "player1";
-                    String p2 = "player2";
+                    //// TODO: 4/6/18 delete this comment
+                    /*String p1 = "player1";
+                    String p2 = "player2";*/
 
                     String p = asv[a] == player[1] ? "Player 1" : "Player 2";
                     String winner = "Winner: " + p;
