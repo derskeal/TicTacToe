@@ -101,8 +101,8 @@ public class SThreeActivity extends AppCompatActivity {
                 playsym = "X";
                 defplaysym = "X";
                 valtouse = true;
-                TextView v = (TextView) findViewById(R.id.player_turn_id);
-                v.setText("X");
+                /*TextView v = (TextView) findViewById(R.id.player_turn_id);
+                v.setText("X");*/
             }
         });
 
@@ -113,8 +113,8 @@ public class SThreeActivity extends AppCompatActivity {
                 playsym = "O";
                 defplaysym = "O";
                 valtouse = false;
-                TextView v = (TextView) findViewById(R.id.player_turn_id);
-                v.setText("O");
+                /*TextView v = (TextView) findViewById(R.id.player_turn_id);
+                v.setText("O");*/
             }
         });
 
@@ -133,24 +133,27 @@ public class SThreeActivity extends AppCompatActivity {
     }
 
     public void cell_clicked(View v) {
-        cell_clicked2(v);
+        if(!gamewon && !gamedrawn) {
+            cell_clicked2(v);
+        }
+
 
         TextView k = (TextView)findViewById(R.id.player_turn_id);
-        if(!gamewon || !gamedrawn) {
+        if (!gamewon && !gamedrawn) {
             k.setText("Computer is playing");
-        } else if (gamewon || gamedrawn) {
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    ai_play();
+                }
+            }, 1000);
+        }
+
+        if(gamewon || gamedrawn) {
             k.setText("Game Over");
         }
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                ai_play();
-            }
-        }, 1000);
-
     }
 
 
@@ -158,6 +161,7 @@ public class SThreeActivity extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences( "ttts3", this.MODE_PRIVATE);
         SharedPreferences.Editor storage = sharedPref.edit();
 
+        TextView pti = (TextView) findViewById(R.id.player_turn_id);
 
         if (gamewon) {
 
@@ -193,11 +197,16 @@ public class SThreeActivity extends AppCompatActivity {
                 v.setText(playsym);
                 valtouse = !valtouse;
 
-                TextView pti = (TextView) findViewById(R.id.player_turn_id);
-                String pt = valtouse ? "Player 1" : "Player 2";
+
+                String pt = valtouse ? "Player 1" : "Computer";
                 pti.setText(pt);
+
+                taptimes++;
+
+
             } else if (taptimes >= 9) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
+
                 //save the draw
                 int vp1 = sharedPref.getInt("player1draws", 0);
                 int vp2 = sharedPref.getInt("player2draws", 0);
@@ -207,13 +216,13 @@ public class SThreeActivity extends AppCompatActivity {
                 storage.putInt("player2draws",vp2);
                 storage.apply();
                 gamedrawn = true;
+
+                pti.setText("Game Over");
             }
 
             else {
                 Toast.makeText(this, "Already played cell", Toast.LENGTH_SHORT).show();
             }
-
-            taptimes++;
 
             //Array e =
             //Object e = new Object();
@@ -254,9 +263,12 @@ public class SThreeActivity extends AppCompatActivity {
 
                     Toast.makeText(this, "Game Over", Toast.LENGTH_SHORT).show();
                     gamewon = true;
+                    valtouse = true;
 
                     TextView win = (TextView)findViewById(R.id.winner_status);
                     win.setText(winner);
+
+                    pti.setText("Game Over");
 
                     break;
                 }
@@ -267,10 +279,10 @@ public class SThreeActivity extends AppCompatActivity {
 
             }
 
-            if (taptimes == 9 && !gamewon) {
+            /*if (taptimes == 9 && !gamewon) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
                 gamedrawn = true;
-            }
+            }*/
 
 
         }
@@ -284,10 +296,12 @@ public class SThreeActivity extends AppCompatActivity {
         TextView win = (TextView)findViewById(R.id.winner_status);
         win.setText("");
         taptimes = 0;
-
-        valtouse = defplaysym == "X";
+        gamedrawn = false;
+        //valtouse = defplaysym == "X";
         TextView pti = (TextView) findViewById(R.id.player_turn_id);
-        String pt = valtouse ? "Player 1" : "Player 2";;
+        //String pt = valtouse ? "Player 1" : "Computer";
+        String pt = "Player 1";
+
         pti.setText(pt);
 
         asv = new String[10];

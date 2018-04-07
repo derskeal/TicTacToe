@@ -202,6 +202,7 @@ public class SFourActivity extends AppCompatActivity {
                 String pt = valtouse ? "X" : "O";
                 pti.setText(pt);
                 taptimes++;
+
             } else if (taptimes >= 16) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
             }
@@ -257,9 +258,9 @@ public class SFourActivity extends AppCompatActivity {
 
             }
 
-            if (taptimes == 16 && !gamewon) {
+            /*if (taptimes == 16 && !gamewon) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
-            }
+            }*/
 
 
         }
@@ -270,6 +271,8 @@ public class SFourActivity extends AppCompatActivity {
         TextView win = (TextView)findViewById(R.id.winner_status);
         win.setText("");
         taptimes = 0;
+
+
 
         valtouse = true;
         TextView pti = (TextView) findViewById(R.id.player_turn_id);

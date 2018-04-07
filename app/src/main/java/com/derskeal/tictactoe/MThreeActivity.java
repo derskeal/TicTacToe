@@ -179,6 +179,8 @@ public class MThreeActivity extends AppCompatActivity {
                 v.setText(playsym);
                 valtouse = !valtouse;
 
+                taptimes++;
+
 
             } else if (taptimes >= 9) {
                 Toast.makeText(this, "Game Over. It's a draw", Toast.LENGTH_SHORT).show();
@@ -199,8 +201,6 @@ public class MThreeActivity extends AppCompatActivity {
                 String pt = "Game Over";
                 pti.setText(pt);
             }
-
-            taptimes++;
 
             //
             int[][] wi = {
@@ -290,6 +290,7 @@ public class MThreeActivity extends AppCompatActivity {
         TextView win = (TextView)findViewById(R.id.winner_status);
         win.setText("");
         taptimes = 0;
+        gamedrawn = false;
 
         valtouse = true;
         TextView pti = (TextView) findViewById(R.id.player_turn_id);
