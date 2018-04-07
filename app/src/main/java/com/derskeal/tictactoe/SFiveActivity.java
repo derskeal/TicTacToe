@@ -158,7 +158,7 @@ public class SFiveActivity extends AppCompatActivity {
 
     public void cell_clicked2(View vv) {
 
-        SharedPreferences sharedPref = getSharedPreferences( "ttts4", this.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences( "ttts5", this.MODE_PRIVATE);
         SharedPreferences.Editor storage = sharedPref.edit();
 
         if (gamewon) {
