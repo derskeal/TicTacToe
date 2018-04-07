@@ -42,7 +42,7 @@ public class SThreeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sthree);
+        setContentView(R.layout.activity_mthree);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -139,7 +139,7 @@ public class SThreeActivity extends AppCompatActivity {
 
         TextView k = (TextView)findViewById(R.id.player_turn_id);
         if (!gamewon && !gamedrawn) {
-            k.setText("Computer is playing");
+            k.setText(R.string.comp_play_status);
 
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -151,7 +151,7 @@ public class SThreeActivity extends AppCompatActivity {
         }
 
         if(gamewon || gamedrawn) {
-            k.setText("Game Over");
+            k.setText(R.string.game_over);
         }
     }
 
@@ -216,7 +216,7 @@ public class SThreeActivity extends AppCompatActivity {
                 storage.apply();
                 gamedrawn = true;
 
-                pti.setText("Game Over");
+                pti.setText(R.string.game_over);
             }
 
             else {
@@ -267,7 +267,7 @@ public class SThreeActivity extends AppCompatActivity {
                     TextView win = (TextView)findViewById(R.id.winner_status);
                     win.setText(winner);
 
-                    pti.setText("Game Over");
+                    pti.setText(R.string.game_over);
 
                     break;
                 }

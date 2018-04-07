@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Multiplayer"
+        android:text="@string/multiplayer"
         android:textSize="25sp"
 
         />
@@ -18,14 +18,14 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Play 3x3"
+        android:text="@string/p3x3"
         android:layout_gravity="center"
         android:onClick="mplay_3x3"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Play 4x4"
+        android:text="@string/p4x4"
         android:layout_gravity="center"
         android:onClick="mplay_4x4"
         />
@@ -33,7 +33,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Play 5x5"
+        android:text="@string/p5x5"
         android:layout_gravity="center"
         android:onClick="mplay_5x5"
         />
@@ -41,34 +41,34 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="About Game"
+        android:text="@string/about"
         android:layout_gravity="center"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Single Player"
+        android:text="@string/single_player"
         android:textSize="25sp"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Play 3x3"
+        android:text="@string/p3x3"
         android:layout_gravity="center"
         android:onClick="splay_3x3"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Play 4x4"
+        android:text="@string/p4x4"
         android:layout_gravity="center"
         android:onClick="splay_4x4"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Play 5x5"
+        android:text="@string/p5x5"
         android:layout_gravity="center"
         android:onClick="splay_5x5"
         />
@@ -77,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="ScoreBoard"
+        android:text="@string/scoreboard"
         android:textColor="#ffffff"
         android:background="#2255aa"
         android:padding="10dp"

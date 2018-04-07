@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.derskeal.tictactoe.ScoreBoardActivity">
 
     <LinearLayout
@@ -19,14 +19,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="VS Computer (Single Player)"
+            android:text="@string/sc_sp"
             android:textSize="20sp"
             android:layout_gravity="center"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3x3"
+            android:text="@string/x3"
             android:textSize="20sp"
             android:layout_gravity="center"
             />
@@ -43,13 +43,13 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Player"
+                    android:text="@string/player_text_1"
                     android:padding="5dp"
                     />
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Computer"
+                    android:text="@string/computer_text"
                     android:padding="5dp"
                     />
 
@@ -59,14 +59,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Won"
+                    android:text="@string/games_won"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sthreewinsp1"
                     />
 
@@ -74,7 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sthreewinsp2"
                     />
             </TableRow>
@@ -83,14 +83,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Drawn"
+                    android:text="@string/games_drawn"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sthreedrawsp1"
                     />
 
@@ -98,7 +98,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sthreedrawsp2"
                     />
             </TableRow>
@@ -107,14 +107,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Lost"
+                    android:text="@string/games_lost"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sthreelossesp1"
                     />
 
@@ -122,7 +122,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sthreelossesp2"
                     />
             </TableRow>
@@ -131,7 +131,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4x4"
+            android:text="@string/x4"
             android:textSize="20sp"
             android:layout_gravity="center"
             />
@@ -148,13 +148,13 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Player 1"
+                    android:text="@string/player_text_1"
                     android:padding="5dp"
                     />
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Player 2"
+                    android:text="@string/player_text_2"
                     android:padding="5dp"
                     />
 
@@ -164,14 +164,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Won"
+                    android:text="@string/games_won"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sfourwinsp1"
                     />
 
@@ -179,7 +179,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sfourwinsp2"
                     />
             </TableRow>
@@ -188,14 +188,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Drawn"
+                    android:text="@string/games_drawn"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sfourdrawsp1"
                     />
 
@@ -203,7 +203,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sfourdrawsp2"
                     />
             </TableRow>
@@ -212,14 +212,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Lost"
+                    android:text="@string/games_lost"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sfourlossesp1"
                     />
 
@@ -227,7 +227,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sfourlossesp2"
                     />
             </TableRow>
@@ -236,7 +236,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="5x5"
+            android:text="@string/x5"
             android:textSize="20sp"
             android:layout_gravity="center"
             />
@@ -253,13 +253,13 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Player 1"
+                    android:text="@string/player_text_1"
                     android:padding="5dp"
                     />
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Player 2"
+                    android:text="@string/player_text_2"
                     android:padding="5dp"
                     />
 
@@ -269,14 +269,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Won"
+                    android:text="@string/games_won"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sfivewinsp1"
                     />
 
@@ -284,7 +284,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sfivewinsp2"
                     />
             </TableRow>
@@ -293,14 +293,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Drawn"
+                    android:text="@string/games_drawn"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sfivedrawsp1"
                     />
 
@@ -308,7 +308,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sfivedrawsp2"
                     />
             </TableRow>
@@ -317,14 +317,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Lost"
+                    android:text="@string/games_lost"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sfivelossesp1"
                     />
 
@@ -332,7 +332,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/sfivelossesp2"
                     />
             </TableRow>
@@ -351,7 +351,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="VS Human (Multiplayer)"
+            android:text="@string/sc_mp"
             android:id="@+id/vshuman"
             android:textSize="20sp"
             android:layout_gravity="center"
@@ -359,7 +359,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3x3"
+            android:text="@string/x3"
             android:textSize="20sp"
             android:layout_gravity="center"
             />
@@ -376,13 +376,13 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Player 1"
+                    android:text="@string/player_text_1"
                     android:padding="5dp"
                     />
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Player 2"
+                    android:text="@string/player_text_2"
                     android:padding="5dp"
                     />
 
@@ -392,14 +392,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Won"
+                    android:text="@string/games_won"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mthreewinsp1"
                     />
 
@@ -407,7 +407,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mthreewinsp2"
                     />
             </TableRow>
@@ -416,14 +416,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Drawn"
+                    android:text="@string/games_drawn"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mthreedrawsp1"
                     />
 
@@ -431,7 +431,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mthreedrawsp2"
                     />
             </TableRow>
@@ -440,14 +440,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Lost"
+                    android:text="@string/games_lost"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mthreelossesp1"
                     />
 
@@ -455,7 +455,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mthreelossesp2"
                     />
             </TableRow>
@@ -464,7 +464,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4x4"
+            android:text="@string/x4"
             android:textSize="20sp"
             android:layout_gravity="center"
             />
@@ -481,13 +481,13 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Player 1"
+                    android:text="@string/player_text_1"
                     android:padding="5dp"
                     />
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Player 2"
+                    android:text="@string/player_text_2"
                     android:padding="5dp"
                     />
 
@@ -497,14 +497,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Won"
+                    android:text="@string/games_won"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mfourwinsp1"
                     />
 
@@ -512,7 +512,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mfourwinsp2"
                     />
             </TableRow>
@@ -521,14 +521,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Drawn"
+                    android:text="@string/games_drawn"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mfourdrawsp1"
                     />
 
@@ -536,7 +536,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mfourdrawsp2"
                     />
             </TableRow>
@@ -545,14 +545,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Lost"
+                    android:text="@string/games_lost"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mfourlossesp1"
                     />
 
@@ -560,7 +560,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mfourlossesp2"
                     />
             </TableRow>
@@ -569,7 +569,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="5x5"
+            android:text="@string/x5"
             android:textSize="20sp"
             android:layout_gravity="center"
             />
@@ -586,13 +586,13 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Player 1"
+                    android:text="@string/player_text_1"
                     android:padding="5dp"
                     />
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Player 2"
+                    android:text="@string/player_text_2"
                     android:padding="5dp"
                     />
 
@@ -602,14 +602,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Won"
+                    android:text="@string/games_won"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mfivewinsp1"
                     />
 
@@ -617,7 +617,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mfivewinsp2"
                     />
             </TableRow>
@@ -626,14 +626,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Drawn"
+                    android:text="@string/games_drawn"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mfivedrawsp1"
                     />
 
@@ -641,7 +641,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mfivedrawsp2"
                     />
             </TableRow>
@@ -650,14 +650,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Games Lost"
+                    android:text="@string/games_drawn"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mfivelossesp1"
                     />
 
@@ -665,7 +665,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="val"
+                    android:text=""
                     android:id="@+id/mfivelossesp2"
                     />
             </TableRow>

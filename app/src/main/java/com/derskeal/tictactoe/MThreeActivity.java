@@ -135,7 +135,7 @@ public class MThreeActivity extends AppCompatActivity {
 
         TextView k = (TextView)findViewById(R.id.player_turn_id);
         if(gamewon || gamedrawn) {
-            k.setText("Game Over");
+            k.setText(R.string.game_over);
         }
 
     }

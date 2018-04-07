@@ -138,12 +138,12 @@ public class SFourActivity extends AppCompatActivity {
 
         TextView k = (TextView)findViewById(R.id.player_turn_id);
         if(!gamewon && taptimes < 16) {
-            k.setText("Computer is playing");
+            k.setText(R.string.comp_play_status);
         } else if (gamewon && taptimes >= 16) {
-            k.setText("Game Over");
+            k.setText(R.string.game_over);
         } else if (!gamewon && taptimes >= 16) {
             /*Toast.makeText(this, "Gamez Ova", Toast.LENGTH_SHORT).show();
-            k.setText("Game Over");*/
+            k.setText(R.string.game_over);*/
         }
         Handler handler = new Handler();
         handler.postDelayed(new Runnable()
@@ -241,13 +241,13 @@ public class SFourActivity extends AppCompatActivity {
                     String p = asv[a] == defplaysym ? "Player 1" : "Computer";
                     String winner = "Winner: " + p;
 
-                    Toast.makeText(this, "Game Over", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.game_over, Toast.LENGTH_SHORT).show();
                     gamewon = true;
 
                     TextView win = (TextView)findViewById(R.id.winner_status);
                     win.setText(winner);
 
-                    pti.setText("Game Over");
+                    pti.setText(R.string.game_over);
 
                     String pp = p == "Player 1" ? "player1" : "computer";
                     String op = p == "Player 1" ? "computer" : "player1";
@@ -276,7 +276,7 @@ public class SFourActivity extends AppCompatActivity {
             if (!gamewon && taptimes >= 16) {
                 //Toast.makeText(this, "Gamez Ova", Toast.LENGTH_SHORT).show();
                 //TextView k = (TextView)findViewById(R.id.player_turn_id);
-                pti.setText("Game Over");
+                pti.setText(R.string.game_over);
 
                 int vp1 = sharedPref.getInt("player1draws", 0);
                 int vp2 = sharedPref.getInt("computerdraws", 0);

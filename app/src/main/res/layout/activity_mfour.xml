@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Player Turn: "
+            android:text="@string/player_turn_title"
             android:textSize="20sp"
             android:layout_gravity="center_horizontal"
             />
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/player_turn_id"
-            android:text="Player 1"
+            android:text="@string/player_turn_text"
             android:textColor="#0000aa"
             android:textSize="20sp"
             />
@@ -47,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="horizontal"
+        android:baselineAligned="false"
 
         >
 
@@ -337,7 +338,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_margin="16dp"
-        android:hint="Reset Game"
+        android:hint="@string/reset"
 
         app:srcCompat="@drawable/ic_autorenew_black_24dp"
         />

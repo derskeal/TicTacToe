@@ -22,32 +22,41 @@ public class ScoreBoardActivity extends AppCompatActivity {
 
         SharedPreferences sp = getSharedPreferences("ttts3", this.MODE_PRIVATE);
 
-        int p1w = sp.getInt("player1wins", 0);
-        int p2w = sp.getInt("computerwins", 0);
+        int p1wi = sp.getInt("player1wins", 0);
+        int p2wi = sp.getInt("computerwins", 0);
 
-        int p1d = sp.getInt("player1draws", 0);
-        int p2d = sp.getInt("computerdraws", 0);
+        int p1di = sp.getInt("player1draws", 0);
+        int p2di = sp.getInt("computerdraws", 0);
 
-        int p1l = sp.getInt("player1losses", 0);
-        int p2l = sp.getInt("computerlosses", 0);
+        int p1li = sp.getInt("player1losses", 0);
+        int p2li = sp.getInt("computerlosses", 0);
+
+        String p1w = p1wi+"";
+        String p2w = p2wi+"";
+
+        String p1d = p1di+"";
+        String p2d = p2di+"";
+
+        String p1l = p1li+"";
+        String p2l = p2li+"";
 
         TextView tv = (TextView)findViewById(R.id.sthreewinsp1);//w1);
-        tv.setText(""+p1w);
+        tv.setText(p1w);
 
         tv = (TextView)findViewById(R.id.sthreewinsp2);//w2);
-        tv.setText(""+p2w);
+        tv.setText(p2w);
 
         tv = (TextView)findViewById(R.id.sthreedrawsp1);//d1);
-        tv.setText(""+p1d);
+        tv.setText(p1d);
 
         tv = (TextView)findViewById(R.id.sthreedrawsp2);//d2);
-        tv.setText(""+p2d);
+        tv.setText(p2d);
 
         tv = (TextView)findViewById(R.id.sthreelossesp1);//l1);
-        tv.setText(""+p1l);
+        tv.setText(p1l);
 
         tv = (TextView)findViewById(R.id.sthreelossesp2);//l2);
-        tv.setText(""+p2l);
+        tv.setText(p2l);
 
 
 
@@ -56,32 +65,40 @@ public class ScoreBoardActivity extends AppCompatActivity {
 
         sp = getSharedPreferences("ttts4", this.MODE_PRIVATE);
 
-        p1w = sp.getInt("player1wins", 0);
-        p2w = sp.getInt("computerwins", 0);
+        p1wi = sp.getInt("player1wins", 0);
+        p2wi = sp.getInt("computerwins", 0);
 
-        p1d = sp.getInt("player1draws", 0);
-        p2d = sp.getInt("computerdraws", 0);
+        p1di = sp.getInt("player1draws", 0);
+        p2di = sp.getInt("computerdraws", 0);
 
-        p1l = sp.getInt("player1losses", 0);
-        p2l = sp.getInt("computerlosses", 0);
+        p1li = sp.getInt("player1losses", 0);
+        p2li = sp.getInt("computerlosses", 0);
+
+        p1w = p1wi+"";
+        p2w = p2wi+"";
+        p1d = p1di+"";
+        p2d = p2di+"";
+
+        p1l = p1li+"";
+        p2l = p2li+"";
 
         tv = (TextView)findViewById(R.id.sfourwinsp1);//w1);
-        tv.setText(""+p1w);
+        tv.setText(p1w);
 
         tv = (TextView)findViewById(R.id.sfourwinsp2);//w2);
-        tv.setText(""+p2w);
+        tv.setText(p2w);
 
         tv = (TextView)findViewById(R.id.sfourdrawsp1);//d1);
-        tv.setText(""+p1d);
+        tv.setText(p1d);
 
         tv = (TextView)findViewById(R.id.sfourdrawsp2);//d2);
-        tv.setText(""+p2d);
+        tv.setText(p2d);
 
         tv = (TextView)findViewById(R.id.sfourlossesp1);//l1);
-        tv.setText(""+p1l);
+        tv.setText(p1l);
 
         tv = (TextView)findViewById(R.id.sfourlossesp2);//l2);
-        tv.setText(""+p2l);
+        tv.setText(p2l);
 
 
         //SINGLE LAYER
@@ -89,32 +106,40 @@ public class ScoreBoardActivity extends AppCompatActivity {
 
         sp = getSharedPreferences("ttts5", this.MODE_PRIVATE);
 
-        p1w = sp.getInt("player1wins", 0);
-        p2w = sp.getInt("computerwins", 0);
+        p1wi = sp.getInt("player1wins", 0);
+        p2wi = sp.getInt("computerwins", 0);
 
-        p1d = sp.getInt("player1draws", 0);
-        p2d = sp.getInt("computerdraws", 0);
+        p1di = sp.getInt("player1draws", 0);
+        p2di = sp.getInt("computerdraws", 0);
 
-        p1l = sp.getInt("player1losses", 0);
-        p2l = sp.getInt("computerlosses", 0);
+        p1li = sp.getInt("player1losses", 0);
+        p2li = sp.getInt("computerlosses", 0);
+
+        p1w = p1wi+"";
+        p2w = p2wi+"";
+        p1d = p1di+"";
+        p2d = p2di+"";
+
+        p1l = p1li+"";
+        p2l = p2li+"";
 
         tv = (TextView)findViewById(R.id.sfivewinsp1);//w1);
-        tv.setText(""+p1w);
+        tv.setText(p1w);
 
         tv = (TextView)findViewById(R.id.sfivewinsp2);//w2);
-        tv.setText(""+p2w);
+        tv.setText(p2w);
 
         tv = (TextView)findViewById(R.id.sfivedrawsp1);//d1);
-        tv.setText(""+p1d);
+        tv.setText(p1d);
 
         tv = (TextView)findViewById(R.id.sfivedrawsp2);//d2);
-        tv.setText(""+p2d);
+        tv.setText(p2d);
 
         tv = (TextView)findViewById(R.id.sfivelossesp1);//l1);
-        tv.setText(""+p1l);
+        tv.setText(p1l);
 
         tv = (TextView)findViewById(R.id.sfivelossesp2);//l2);
-        tv.setText(""+p2l);
+        tv.setText(p2l);
 
 
         //MULTIPLAYER
@@ -122,32 +147,40 @@ public class ScoreBoardActivity extends AppCompatActivity {
 
         sp = getSharedPreferences("tttm3", this.MODE_PRIVATE);
 
-        p1w = sp.getInt("player1wins", 0);
-        p2w = sp.getInt("player2wins", 0);
+        p1wi = sp.getInt("player1wins", 0);
+        p2wi = sp.getInt("player2wins", 0);
 
-        p1d = sp.getInt("player1draws", 0);
-        p2d = sp.getInt("player2draws", 0);
+        p1di = sp.getInt("player1draws", 0);
+        p2di = sp.getInt("player2draws", 0);
 
-        p1l = sp.getInt("player1losses", 0);
-        p2l = sp.getInt("player2losses", 0);
+        p1li = sp.getInt("player1losses", 0);
+        p2li = sp.getInt("player2losses", 0);
+
+        p1w = p1wi+"";
+        p2w = p2wi+"";
+        p1d = p1di+"";
+        p2d = p2di+"";
+
+        p1l = p1li+"";
+        p2l = p2li+"";
 
         tv = (TextView)findViewById(R.id.mthreewinsp1);
-        tv.setText(""+p1w);
+        tv.setText(p1w);
 
         tv = (TextView)findViewById(R.id.mthreewinsp2);
-        tv.setText(""+p2w);
+        tv.setText(p2w);
 
         tv = (TextView)findViewById(R.id.mthreedrawsp1);
-        tv.setText(""+p1d);
+        tv.setText(p1d);
 
         tv = (TextView)findViewById(R.id.mthreedrawsp2);
-        tv.setText(""+p2d);
+        tv.setText(p2d);
 
         tv = (TextView)findViewById(R.id.mthreelossesp1);
-        tv.setText(""+p1l);
+        tv.setText(p1l);
 
         tv = (TextView)findViewById(R.id.mthreelossesp2);
-        tv.setText(""+p2l);
+        tv.setText(p2l);
 
 
         //MULTIPLAYER
@@ -155,32 +188,40 @@ public class ScoreBoardActivity extends AppCompatActivity {
 
         sp = getSharedPreferences("tttm4", this.MODE_PRIVATE);
 
-        p1w = sp.getInt("player1wins", 0);
-        p2w = sp.getInt("player2wins", 0);
+        p1wi = sp.getInt("player1wins", 0);
+        p2wi = sp.getInt("player2wins", 0);
 
-        p1d = sp.getInt("player1draws", 0);
-        p2d = sp.getInt("player2draws", 0);
+        p1di = sp.getInt("player1draws", 0);
+        p2di = sp.getInt("player2draws", 0);
 
-        p1l = sp.getInt("player1losses", 0);
-        p2l = sp.getInt("player2losses", 0);
+        p1li = sp.getInt("player1losses", 0);
+        p2li = sp.getInt("player2losses", 0);
+
+        p1w = p1wi+"";
+        p2w = p2wi+"";
+        p1d = p1di+"";
+        p2d = p2di+"";
+
+        p1l = p1li+"";
+        p2l = p2li+"";
 
         tv = (TextView)findViewById(R.id.mfourwinsp1);
-        tv.setText(""+p1w);
+        tv.setText(p1w);
 
         tv = (TextView)findViewById(R.id.mfourwinsp2);
-        tv.setText(""+p2w);
+        tv.setText(p2w);
 
         tv = (TextView)findViewById(R.id.mfourdrawsp1);
-        tv.setText(""+p1d);
+        tv.setText(p1d);
 
         tv = (TextView)findViewById(R.id.mfourdrawsp2);
-        tv.setText(""+p2d);
+        tv.setText(p2d);
 
         tv = (TextView)findViewById(R.id.mfourlossesp1);
-        tv.setText(""+p1l);
+        tv.setText(p1l);
 
         tv = (TextView)findViewById(R.id.mfourlossesp2);
-        tv.setText(""+p2l);
+        tv.setText(p2l);
 
 
         //MULTIPLAYER
@@ -188,31 +229,39 @@ public class ScoreBoardActivity extends AppCompatActivity {
 
         sp = getSharedPreferences("tttm5", this.MODE_PRIVATE);
 
-        p1w = sp.getInt("player1wins", 0);
-        p2w = sp.getInt("player2wins", 0);
+        p1wi = sp.getInt("player1wins", 0);
+        p2wi = sp.getInt("player2wins", 0);
 
-        p1d = sp.getInt("player1draws", 0);
-        p2d = sp.getInt("player2draws", 0);
+        p1di = sp.getInt("player1draws", 0);
+        p2di = sp.getInt("player2draws", 0);
 
-        p1l = sp.getInt("player1losses", 0);
-        p2l = sp.getInt("player2losses", 0);
+        p1li = sp.getInt("player1losses", 0);
+        p2li = sp.getInt("player2losses", 0);
+
+        p1w = p1wi+"";
+        p2w = p2wi+"";
+        p1d = p1di+"";
+        p2d = p2di+"";
+
+        p1l = p1li+"";
+        p2l = p2li+"";
 
         tv = (TextView)findViewById(R.id.mfivewinsp1);
-        tv.setText(""+p1w);
+        tv.setText(p1w);
 
         tv = (TextView)findViewById(R.id.mfivewinsp2);
-        tv.setText(""+p2w);
+        tv.setText(p2w);
 
         tv = (TextView)findViewById(R.id.mfivedrawsp1);
-        tv.setText(""+p1d);
+        tv.setText(p1d);
 
         tv = (TextView)findViewById(R.id.mfivedrawsp2);
-        tv.setText(""+p2d);
+        tv.setText(p2d);
 
         tv = (TextView)findViewById(R.id.mfivelossesp1);
-        tv.setText(""+p1l);
+        tv.setText(p1l);
 
         tv = (TextView)findViewById(R.id.mfivelossesp2);
-        tv.setText(""+p2l);
+        tv.setText(p2l);
     }
 }
