@@ -321,38 +321,24 @@ public class SThreeActivity extends AppCompatActivity {
 
         asv = new String[10];
 
-        TextView tv = (TextView) findViewById(R.id.c1);
-        tv.setText("");
+        int[] allcells = get_cells_in_array();
 
-        tv = (TextView) findViewById(R.id.c2);
-        tv.setText("");
+        for (int c :
+                allcells) {
+            try {
+                TextView tv = (TextView) findViewById(c);
+                tv.setText("");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
-        tv = (TextView) findViewById(R.id.c3);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c4);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c5);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c6);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c7);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c8);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c9);
-        tv.setText("");
+        }
 
 
     }
 
+    private int[] get_cells_in_array() {
 
-    private void ai_play() {
         int c1 = R.id.c1;
         int c2 = R.id.c2;
         int c3 = R.id.c3;
@@ -363,8 +349,14 @@ public class SThreeActivity extends AppCompatActivity {
         int c8 = R.id.c8;
         int c9 = R.id.c9;
 
-        int[] cs = {0, c1, c2, c3, c4, c5, c6, c7, c8, c9};
 
+        return new int[] {0, c1, c2, c3, c4, c5, c6, c7, c8, c9};
+    }
+
+
+    private void ai_play() {
+
+        int[] cs = get_cells_in_array();
 
         Random rand = new Random();
 

@@ -331,58 +331,23 @@ public class SFourActivity extends AppCompatActivity {
 
         asv = new String[17];
 
-        TextView tv = (TextView) findViewById(R.id.c1);
-        tv.setText("");
+        int[] allcells = get_cells_in_array();
 
-        tv = (TextView) findViewById(R.id.c2);
-        tv.setText("");
+        for (int c :
+                allcells) {
+            try {
+                TextView tv = (TextView) findViewById(c);
+                tv.setText("");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
-        tv = (TextView) findViewById(R.id.c3);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c4);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c5);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c6);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c7);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c8);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c9);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c10);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c11);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c12);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c13);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c14);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c15);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c16);
-        tv.setText("");
-
+        }
 
     }
 
-    private void ai_play() {
+    private int[] get_cells_in_array() {
+
         int c1 = R.id.c1;
         int c2 = R.id.c2;
         int c3 = R.id.c3;
@@ -401,10 +366,14 @@ public class SFourActivity extends AppCompatActivity {
         int c16 = R.id.c16;
 
 
+        return new int[] {0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16};
+    }
 
 
+    private void ai_play() {
 
-        int[] cs = {0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16};
+        int[] cs = get_cells_in_array();
+        //int[] cs = {0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16};
 
 
         Random rand = new Random();

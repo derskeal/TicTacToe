@@ -346,81 +346,6 @@ public class SFiveActivity extends AppCompatActivity {
 
         }
 
-        /*TextView tv = (TextView) findViewById(R.id.c1);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c2);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c3);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c4);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c5);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c6);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c7);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c8);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c9);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c10);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c11);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c12);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c13);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c14);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c15);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c16);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c17);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c18);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c19);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c20);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c21);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c22);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c23);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c24);
-        tv.setText("");
-
-        tv = (TextView) findViewById(R.id.c25);
-        tv.setText("");        */
-
     }
 
     private int[] get_cells_in_array() {
@@ -452,16 +377,12 @@ public class SFiveActivity extends AppCompatActivity {
         int c25 = R.id.c25;
 
 
-        //int[] cs = {0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23, c24, c25};
-
-
-        //int[] a = {2,3};
         return new int[] {0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23, c24, c25};
     }
 
     private void ai_play() {
 
-        int[] cs = get_cells_in_array(); //{0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23, c24, c25};
+        int[] cs = get_cells_in_array();
 
 
         Random rand = new Random();
