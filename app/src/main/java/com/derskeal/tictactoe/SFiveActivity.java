@@ -21,7 +21,7 @@ public class SFiveActivity extends AppCompatActivity {
     public boolean valtouse = true;
     public int taptimes = 0;
 
-    public String[] asv = new String[126]; //asv - all squares value
+    public String[] asv = new String[26]; //asv - all squares value
     public boolean gamewon = false;
 
     //the above two perform the same function as the below, therefore:
@@ -456,7 +456,7 @@ public class SFiveActivity extends AppCompatActivity {
                     && !TextUtils.isEmpty(asv[9]) && !TextUtils.isEmpty(asv[10]) && !TextUtils.isEmpty(asv[11]) && !TextUtils.isEmpty(asv[12])
                     && !TextUtils.isEmpty(asv[13]) && !TextUtils.isEmpty(asv[14]) && !TextUtils.isEmpty(asv[15]) && !TextUtils.isEmpty(asv[16])
                     && !TextUtils.isEmpty(asv[17]) && !TextUtils.isEmpty(asv[18]) && !TextUtils.isEmpty(asv[19]) && !TextUtils.isEmpty(asv[20])
-                    && !TextUtils.isEmpty(asv[21]) && !TextUtils.isEmpty(asv[22]) && !TextUtils.isEmpty(asv[23]) && !TextUtils.isEmpty(asv[245])
+                    && !TextUtils.isEmpty(asv[21]) && !TextUtils.isEmpty(asv[22]) && !TextUtils.isEmpty(asv[23]) && !TextUtils.isEmpty(asv[24])
                     && !TextUtils.isEmpty(asv[25]) )
 
             {
