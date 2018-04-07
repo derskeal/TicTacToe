@@ -209,11 +209,11 @@ public class SThreeActivity extends AppCompatActivity {
 
                 //save the draw
                 int vp1 = sharedPref.getInt("player1draws", 0);
-                int vp2 = sharedPref.getInt("player2draws", 0);
+                int vp2 = sharedPref.getInt("computerdraws", 0);
                 vp1++;
                 vp2++;
                 storage.putInt("player1draws",vp1);
-                storage.putInt("player2draws",vp2);
+                storage.putInt("computerdraws",vp2);
                 storage.apply();
                 gamedrawn = true;
 

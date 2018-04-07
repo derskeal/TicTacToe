@@ -105,8 +105,8 @@ public class SFourActivity extends AppCompatActivity {
                 //playsym = "X";
                 defplaysym = "X";
                 valtouse = true;
-                TextView v = (TextView) findViewById(R.id.player_turn_id);
-                v.setText("X");
+                /*TextView v = (TextView) findViewById(R.id.player_turn_id);
+                v.setText("");*/
             }
         });
 
@@ -118,8 +118,8 @@ public class SFourActivity extends AppCompatActivity {
                 //playsym = "O";
                 defplaysym = "O";
                 valtouse = false;
-                TextView v = (TextView) findViewById(R.id.player_turn_id);
-                v.setText("O");
+                /*TextView v = (TextView) findViewById(R.id.player_turn_id);
+                v.setText("O");*/
             }
         });
 
@@ -141,10 +141,13 @@ public class SFourActivity extends AppCompatActivity {
         cell_clicked2(v);
 
         TextView k = (TextView)findViewById(R.id.player_turn_id);
-        if(!gamewon) {
+        if(!gamewon && taptimes < 16) {
             k.setText("Computer is playing");
-        } else if (gamewon) {
+        } else if (gamewon && taptimes >= 16) {
             k.setText("Game Over");
+        } else if (!gamewon && taptimes >= 16) {
+            /*Toast.makeText(this, "Gamez Ova", Toast.LENGTH_SHORT).show();
+            k.setText("Game Over");*/
         }
         Handler handler = new Handler();
         handler.postDelayed(new Runnable()
@@ -183,6 +186,7 @@ public class SFourActivity extends AppCompatActivity {
         * */
 
             TextView v = (TextView) vv;
+            TextView pti = (TextView) findViewById(R.id.player_turn_id);
 
             if (taptimes < 16 && TextUtils.isEmpty(v.getText().toString())) {
                 String playsym;
@@ -198,8 +202,8 @@ public class SFourActivity extends AppCompatActivity {
                 v.setText(playsym);
                 valtouse = !valtouse;
 
-                TextView pti = (TextView) findViewById(R.id.player_turn_id);
-                String pt = valtouse ? "X" : "O";
+                //TextView pti = (TextView) findViewById(R.id.player_turn_id);
+                String pt = valtouse ? "Player 1" : "Computer";
                 pti.setText(pt);
                 taptimes++;
 
@@ -246,8 +250,23 @@ public class SFourActivity extends AppCompatActivity {
 
                     TextView win = (TextView)findViewById(R.id.winner_status);
                     win.setText(winner);
-                    TextView pt = (TextView) findViewById(R.id.player_turn_id);
-                    pt.setText("Game Over");
+
+                    pti.setText("Game Over");
+
+                    String pp = p == "Player 1" ? "player1" : "computer";
+                    String op = p == "Player 1" ? "computer" : "player1";
+
+                    int vp = sharedPref.getInt(pp+"wins", 0);
+                    int vpl = sharedPref.getInt(op+"losses", 0);
+                    vp++;
+                    vpl++;
+
+
+                    storage.putInt(pp+"wins",vp);
+                    storage.putInt(op+"losses",vpl);
+                    storage.apply();
+
+
 
                     break;
                 }
@@ -256,6 +275,20 @@ public class SFourActivity extends AppCompatActivity {
 
                 }*/
 
+            }
+
+            if (!gamewon && taptimes >= 16) {
+                //Toast.makeText(this, "Gamez Ova", Toast.LENGTH_SHORT).show();
+                //TextView k = (TextView)findViewById(R.id.player_turn_id);
+                pti.setText("Game Over");
+
+                int vp1 = sharedPref.getInt("player1draws", 0);
+                int vp2 = sharedPref.getInt("computerdraws", 0);
+                vp1++;
+                vp2++;
+                storage.putInt("player1draws",vp1);
+                storage.putInt("computerdraws",vp2);
+                storage.apply();
             }
 
             /*if (taptimes == 16 && !gamewon) {

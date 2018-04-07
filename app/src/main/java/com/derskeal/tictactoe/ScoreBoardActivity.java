@@ -24,13 +24,13 @@ public class ScoreBoardActivity extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences("ttts3", this.MODE_PRIVATE);
 
         int p1w = sp.getInt("player1wins", 0);
-        int p2w = sp.getInt("player2wins", 0);
+        int p2w = sp.getInt("computerwins", 0);
 
         int p1d = sp.getInt("player1draws", 0);
-        int p2d = sp.getInt("player2draws", 0);
+        int p2d = sp.getInt("computerdraws", 0);
 
         int p1l = sp.getInt("player1losses", 0);
-        int p2l = sp.getInt("player2losses", 0);
+        int p2l = sp.getInt("computerlosses", 0);
 
         TextView tv = (TextView)findViewById(R.id.sthreewinsp1);//w1);
         tv.setText(""+p1w);
@@ -58,13 +58,13 @@ public class ScoreBoardActivity extends AppCompatActivity {
         sp = getSharedPreferences("ttts4", this.MODE_PRIVATE);
 
         p1w = sp.getInt("player1wins", 0);
-        p2w = sp.getInt("player2wins", 0);
+        p2w = sp.getInt("computerwins", 0);
 
         p1d = sp.getInt("player1draws", 0);
-        p2d = sp.getInt("player2draws", 0);
+        p2d = sp.getInt("computerdraws", 0);
 
         p1l = sp.getInt("player1losses", 0);
-        p2l = sp.getInt("player2losses", 0);
+        p2l = sp.getInt("computerlosses", 0);
 
         tv = (TextView)findViewById(R.id.sfourwinsp1);//w1);
         tv.setText(""+p1w);
@@ -91,13 +91,13 @@ public class ScoreBoardActivity extends AppCompatActivity {
         sp = getSharedPreferences("ttts5", this.MODE_PRIVATE);
 
         p1w = sp.getInt("player1wins", 0);
-        p2w = sp.getInt("player2wins", 0);
+        p2w = sp.getInt("computerwins", 0);
 
         p1d = sp.getInt("player1draws", 0);
-        p2d = sp.getInt("player2draws", 0);
+        p2d = sp.getInt("computerdraws", 0);
 
         p1l = sp.getInt("player1losses", 0);
-        p2l = sp.getInt("player2losses", 0);
+        p2l = sp.getInt("computerlosses", 0);
 
         tv = (TextView)findViewById(R.id.sfivewinsp1);//w1);
         tv.setText(""+p1w);
