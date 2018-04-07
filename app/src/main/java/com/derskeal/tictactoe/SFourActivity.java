@@ -1,5 +1,6 @@
 package com.derskeal.tictactoe;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Handler;
@@ -18,19 +19,19 @@ import java.util.Random;
 
 public class SFourActivity extends AppCompatActivity {
 
-    public boolean valtouse = true;
-    public int taptimes = 0;
+    private boolean valtouse = true;
+    private int taptimes = 0;
 
-    public String[] asv = new String[17]; //asv - all squares value
-    public boolean gamewon = false;
+    private String[] asv = new String[17]; //asv - all squares value
+    private boolean gamewon = false;
 
     //public String playsym;
     //public String player;
     //the above two perform the same function as the below, therefore:
-    public String defplaysym;
+    private String defplaysym;
 
-    public int r1;
-    public boolean player_played;
+    private int r1;
+    private boolean player_played;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +85,7 @@ public class SFourActivity extends AppCompatActivity {
     }
 
 
-    public void avatar_select() {
+    private void avatar_select() {
         //Toast.makeText(this, "chai", Toast.LENGTH_SHORT).show();
         // 1. Instantiate an AlertDialog.Builder with its constructor
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -158,9 +159,9 @@ public class SFourActivity extends AppCompatActivity {
     }
 
 
-    public void cell_clicked2(View vv) {
+    private void cell_clicked2(View vv) {
 
-        SharedPreferences sharedPref = getSharedPreferences( "ttts4", this.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences( "ttts4", Context.MODE_PRIVATE);
         SharedPreferences.Editor storage = sharedPref.edit();
 
         if (gamewon) {
@@ -295,7 +296,7 @@ public class SFourActivity extends AppCompatActivity {
         }
     }
 
-    public void reset_game() {
+    private void reset_game() {
         gamewon = false;
         TextView win = (TextView)findViewById(R.id.winner_status);
         win.setText("");
@@ -361,7 +362,7 @@ public class SFourActivity extends AppCompatActivity {
 
     }
 
-    public void ai_play() {
+    private void ai_play() {
         int c1 = R.id.c1;
         int c2 = R.id.c2;
         int c3 = R.id.c3;

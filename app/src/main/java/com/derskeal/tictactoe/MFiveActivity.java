@@ -16,13 +16,13 @@ import android.widget.Toast;
 
 public class MFiveActivity extends AppCompatActivity {
 
-    public boolean valtouse = true;
-    public int taptimes = 0;
-    public String[] asv = new String[26]; //asv - all squares value
-    public boolean gamewon = false;
-    public boolean gamedrawn = false;
+    private boolean valtouse = true;
+    private int taptimes = 0;
+    private String[] asv = new String[26]; //asv - all squares value
+    private boolean gamewon = false;
+    private boolean gamedrawn = false;
 
-    public String[] player = {"","",""};
+    private String[] player = {"","",""};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class MFiveActivity extends AppCompatActivity {
     }
 
 
-    public void avatar_select() {
+    private void avatar_select() {
         //Toast.makeText(this, "chai", Toast.LENGTH_SHORT).show();
         // 1. Instantiate an AlertDialog.Builder with its constructor
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -281,7 +281,7 @@ public class MFiveActivity extends AppCompatActivity {
         }
     }
 
-    public void reset_game() {
+    private void reset_game() {
 
         //reset all dependent variables
 

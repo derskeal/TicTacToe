@@ -1,5 +1,6 @@
 package com.derskeal.tictactoe;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Handler;
@@ -18,17 +19,17 @@ import java.util.Random;
 
 public class SFiveActivity extends AppCompatActivity {
 
-    public boolean valtouse = true;
-    public int taptimes = 0;
+    private boolean valtouse = true;
+    private int taptimes = 0;
 
-    public String[] asv = new String[26]; //asv - all squares value
-    public boolean gamewon = false;
+    private String[] asv = new String[26]; //asv - all squares value
+    private boolean gamewon = false;
 
     //the above two perform the same function as the below, therefore:
-    public String defplaysym;
+    private String defplaysym;
 
-    public int r1;
-    public boolean player_played;
+    private int r1;
+    private boolean player_played;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +83,7 @@ public class SFiveActivity extends AppCompatActivity {
     }
 
 
-    public void avatar_select() {
+    private void avatar_select() {
         //Toast.makeText(this, "chai", Toast.LENGTH_SHORT).show();
         // 1. Instantiate an AlertDialog.Builder with its constructor
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -156,9 +157,9 @@ public class SFiveActivity extends AppCompatActivity {
     }
 
 
-    public void cell_clicked2(View vv) {
+    private void cell_clicked2(View vv) {
 
-        SharedPreferences sharedPref = getSharedPreferences( "ttts5", this.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences( "ttts5", Context.MODE_PRIVATE);
         SharedPreferences.Editor storage = sharedPref.edit();
 
         if (gamewon) {
@@ -296,7 +297,7 @@ public class SFiveActivity extends AppCompatActivity {
         }
     }
 
-    public void reset_game() {
+    private void reset_game() {
         gamewon = false;
         TextView win = (TextView)findViewById(R.id.winner_status);
         win.setText("");
@@ -402,7 +403,7 @@ public class SFiveActivity extends AppCompatActivity {
 
     }
 
-    public int[] get_cells_in_array() {
+    private int[] get_cells_in_array() {
 
         int c1 = R.id.c1;
         int c2 = R.id.c2;
@@ -438,7 +439,7 @@ public class SFiveActivity extends AppCompatActivity {
         return new int[] {0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23, c24, c25};
     }
 
-    public void ai_play() {
+    private void ai_play() {
 
         int[] cs = get_cells_in_array(); //{0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23, c24, c25};
 

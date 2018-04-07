@@ -22,7 +22,7 @@
         <activity android:name=".SThreeActivity" />
         <activity android:name=".ScoreBoardActivity" />
         <activity android:name=".SFourActivity" />
-        <activity android:name=".SFiveActivity"></activity>
+        <activity android:name=".SFiveActivity" />
     </application>
 
 </manifest>

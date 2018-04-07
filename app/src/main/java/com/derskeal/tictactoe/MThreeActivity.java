@@ -18,14 +18,14 @@ import android.widget.Toast;
 
 public class MThreeActivity extends AppCompatActivity {
 
-    public boolean valtouse = true;
-    public int taptimes = 0;
+    private boolean valtouse = true;
+    private int taptimes = 0;
 
-    public String[] asv = new String[10]; //asv - all squares value
-    public boolean gamewon = false;
-    public boolean gamedrawn = false;
+    private String[] asv = new String[10]; //asv - all squares value
+    private boolean gamewon = false;
+    private boolean gamedrawn = false;
 
-    public String[] player = {"","",""};
+    private String[] player = {"","",""};
 
 
     @Override
@@ -79,7 +79,7 @@ public class MThreeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void avatar_select() {
+    private void avatar_select() {
         //Toast.makeText(this, "chai", Toast.LENGTH_SHORT).show();
         // 1. Instantiate an AlertDialog.Builder with its constructor
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -140,7 +140,7 @@ public class MThreeActivity extends AppCompatActivity {
 
     }
 
-    public void cell_clicked2(View vv) {
+    private void cell_clicked2(View vv) {
         SharedPreferences sharedPref = getSharedPreferences( "tttm3", Context.MODE_PRIVATE);
         SharedPreferences.Editor storage = sharedPref.edit();
 
@@ -282,7 +282,7 @@ public class MThreeActivity extends AppCompatActivity {
         }
     }
 
-    public void reset_game() {
+    private void reset_game() {
         gamewon = false;
         TextView win = (TextView)findViewById(R.id.winner_status);
         win.setText("");

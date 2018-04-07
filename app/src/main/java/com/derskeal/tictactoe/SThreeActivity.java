@@ -22,20 +22,20 @@ import java.util.concurrent.TimeUnit;
 
 public class SThreeActivity extends AppCompatActivity {
 
-    public boolean valtouse = true;
-    public int taptimes = 0;
+    private boolean valtouse = true;
+    private int taptimes = 0;
 
-    public String[] asv = new String[10]; //asv - all squares value
-    public boolean gamewon = false;
-    public boolean gamedrawn = false;
+    private String[] asv = new String[10]; //asv - all squares value
+    private boolean gamewon = false;
+    private boolean gamedrawn = false;
 
-    public String playsym;
+    private String playsym;
 
     //anywhere you find defplaysym, it is performing the same function as the player variable
-    public String defplaysym;
+    private String defplaysym;
 
-    public int r1;
-    public boolean player_played;
+    private int r1;
+    private boolean player_played;
 
 
 
@@ -84,7 +84,7 @@ public class SThreeActivity extends AppCompatActivity {
     }
 
 
-    public void avatar_select() {
+    private void avatar_select() {
         //Toast.makeText(this, "chai", Toast.LENGTH_SHORT).show();
         // 1. Instantiate an AlertDialog.Builder with its constructor
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -156,8 +156,8 @@ public class SThreeActivity extends AppCompatActivity {
     }
 
 
-    public void cell_clicked2(View vv) {
-        SharedPreferences sharedPref = getSharedPreferences( "ttts3", this.MODE_PRIVATE);
+    private void cell_clicked2(View vv) {
+        SharedPreferences sharedPref = getSharedPreferences( "ttts3", Context.MODE_PRIVATE);
         SharedPreferences.Editor storage = sharedPref.edit();
 
         TextView pti = (TextView) findViewById(R.id.player_turn_id);
@@ -290,7 +290,7 @@ public class SThreeActivity extends AppCompatActivity {
 
     }
 
-    public void reset_game() {
+    private void reset_game() {
         gamewon = false;
         TextView win = (TextView)findViewById(R.id.winner_status);
         win.setText("");
@@ -336,7 +336,7 @@ public class SThreeActivity extends AppCompatActivity {
     }
 
 
-    public void ai_play() {
+    private void ai_play() {
         int c1 = R.id.c1;
         int c2 = R.id.c2;
         int c3 = R.id.c3;

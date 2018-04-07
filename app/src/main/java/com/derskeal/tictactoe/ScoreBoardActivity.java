@@ -1,5 +1,6 @@
 package com.derskeal.tictactoe;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,12 +16,12 @@ public class ScoreBoardActivity extends AppCompatActivity {
         setTheStage();
     }
 
-    public void setTheStage() {
+    private void setTheStage() {
 
         //SINGLE PLAYER
         //3x3 box section
 
-        SharedPreferences sp = getSharedPreferences("ttts3", this.MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("ttts3", Context.MODE_PRIVATE);
 
         int p1wi = sp.getInt("player1wins", 0);
         int p2wi = sp.getInt("computerwins", 0);
@@ -63,7 +64,7 @@ public class ScoreBoardActivity extends AppCompatActivity {
         //SINGLE LAYER
         //4X4 BOX SECTION
 
-        sp = getSharedPreferences("ttts4", this.MODE_PRIVATE);
+        sp = getSharedPreferences("ttts4", Context.MODE_PRIVATE);
 
         p1wi = sp.getInt("player1wins", 0);
         p2wi = sp.getInt("computerwins", 0);
@@ -104,7 +105,7 @@ public class ScoreBoardActivity extends AppCompatActivity {
         //SINGLE LAYER
         //5x5 BOX SECTION
 
-        sp = getSharedPreferences("ttts5", this.MODE_PRIVATE);
+        sp = getSharedPreferences("ttts5", Context.MODE_PRIVATE);
 
         p1wi = sp.getInt("player1wins", 0);
         p2wi = sp.getInt("computerwins", 0);
@@ -145,7 +146,7 @@ public class ScoreBoardActivity extends AppCompatActivity {
         //MULTIPLAYER
         //3x3 BOX SECTION
 
-        sp = getSharedPreferences("tttm3", this.MODE_PRIVATE);
+        sp = getSharedPreferences("tttm3", Context.MODE_PRIVATE);
 
         p1wi = sp.getInt("player1wins", 0);
         p2wi = sp.getInt("player2wins", 0);
@@ -186,7 +187,7 @@ public class ScoreBoardActivity extends AppCompatActivity {
         //MULTIPLAYER
         //4x4 BOX SECTION
 
-        sp = getSharedPreferences("tttm4", this.MODE_PRIVATE);
+        sp = getSharedPreferences("tttm4", Context.MODE_PRIVATE);
 
         p1wi = sp.getInt("player1wins", 0);
         p2wi = sp.getInt("player2wins", 0);
@@ -227,7 +228,7 @@ public class ScoreBoardActivity extends AppCompatActivity {
         //MULTIPLAYER
         //5x5 BOX SECTION
 
-        sp = getSharedPreferences("tttm5", this.MODE_PRIVATE);
+        sp = getSharedPreferences("tttm5", Context.MODE_PRIVATE);
 
         p1wi = sp.getInt("player1wins", 0);
         p2wi = sp.getInt("player2wins", 0);
