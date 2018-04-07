@@ -305,7 +305,7 @@ public class SFourActivity extends AppCompatActivity {
 
         valtouse = true;
         TextView pti = (TextView) findViewById(R.id.player_turn_id);
-        String pt = valtouse ? "X" : "O";
+        String pt = valtouse ? "Player 1" : "Computer";
         pti.setText(pt);
 
         asv = new String[17];
