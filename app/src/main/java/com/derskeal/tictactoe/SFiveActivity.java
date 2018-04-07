@@ -10,4 +10,6 @@ public class SFiveActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sfive);
     }
+
+    //create single player activity for 5x5 box
 }

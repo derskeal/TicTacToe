@@ -131,7 +131,6 @@ public class MFiveActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // TODO: 28/03/2018 add 4x4 box
 
     public void cell_clicked(View vv) {
         SharedPreferences sharedPref = getSharedPreferences( "tttm5", Context.MODE_PRIVATE);

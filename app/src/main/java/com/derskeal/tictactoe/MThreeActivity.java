@@ -223,9 +223,6 @@ public class MThreeActivity extends AppCompatActivity {
 
                 if (!TextUtils.isEmpty(asv[a]) && asv[a] == asv[b] && asv[a] == asv[c]) {
 
-                    //// TODO: 4/6/18 delete this comment
-                    /*String p1 = "player1";
-                    String p2 = "player2";*/
 
                     String p = asv[a] == player[1] ? "Player 1" : "Player 2";
                     String winner = "Winner: " + p;

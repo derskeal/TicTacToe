@@ -83,7 +83,6 @@ public class SThreeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // TODO: 28/03/2018 add single player mode/AI and s4 n s5
 
     public void avatar_select() {
         //Toast.makeText(this, "chai", Toast.LENGTH_SHORT).show();

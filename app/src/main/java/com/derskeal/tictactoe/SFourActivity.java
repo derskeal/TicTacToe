@@ -27,10 +27,7 @@ public class SFourActivity extends AppCompatActivity {
     //public String playsym;
     //public String player;
     //the above two perform the same function as the below, therefore:
-    //todo find a way to eradicate them
     public String defplaysym;
-
-    //@todo save game history
 
     public int r1;
     public boolean player_played;
@@ -86,7 +83,6 @@ public class SFourActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // TODO: 28/03/2018 add 4x4 box
 
     public void avatar_select() {
         //Toast.makeText(this, "chai", Toast.LENGTH_SHORT).show();
@@ -365,7 +361,6 @@ public class SFourActivity extends AppCompatActivity {
 
     }
 
-    //todo setup ai to play
     public void ai_play() {
         int c1 = R.id.c1;
         int c2 = R.id.c2;
